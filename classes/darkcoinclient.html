@@ -66,6 +66,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Client instance for doing RPC calls on Dashd</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -94,6 +101,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="darkcoinclient.html#callrpcmethod" class="tsd-kind-icon">callRPCMethod</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#getnewaddress" class="tsd-kind-icon">get<wbr>New<wbr>Address</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#getwalletinfo" class="tsd-kind-icon">get<wbr>Wallet<wbr>Info</a></li>
 							</ul>
 						</section>
@@ -112,7 +120,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/darkcoinClient.ts:17</li>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L26">lib/darkcoinClient.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -134,7 +142,7 @@
 					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <a href="../interfaces/dashdconfig.html" class="tsd-signature-type">DashdConfig</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in lib/darkcoinClient.ts:17</li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L26">lib/darkcoinClient.ts:26</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -151,9 +159,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/darkcoinClient.ts:22</li>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L38">lib/darkcoinClient.ts:38</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This methods allows to call any of the RPC methods provided by dashd directly.
+									Call it with &#39;help&#39; for the full list of commands.</p>
+								</div>
+							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -164,15 +178,46 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>method: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>name of the method to call, e.g getblockhash</p>
+									</div>
 								</li>
 								<li>
 									<h5>params: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>params of the method, e.g. height for getblockhash</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callId: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>id to associate with call</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnewaddress" class="tsd-anchor"></a>
+					<h3>get<wbr>New<wbr>Address</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>New<wbr>Address<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L68">lib/darkcoinClient.ts:68</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a new Dash address for receiving payments.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -186,7 +231,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/darkcoinClient.ts:45</li>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L61">lib/darkcoinClient.ts:61</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -223,6 +268,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
 								<a href="darkcoinclient.html#callrpcmethod" class="tsd-kind-icon">callRPCMethod</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#getnewaddress" class="tsd-kind-icon">get<wbr>New<wbr>Address</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="darkcoinclient.html#getwalletinfo" class="tsd-kind-icon">get<wbr>Wallet<wbr>Info</a>
