@@ -1,7 +1,9 @@
 # darkcoin-client
 
-Dash RPC api client
+Dash RPC api client. See docs at https://dashuser33.github.io/darkcoin-client/
 
+
+Example usage:
 
 ```javascript
 "use strict";
