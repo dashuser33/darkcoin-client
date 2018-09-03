@@ -68,4 +68,34 @@ export default class DarkcoinClient {
   public getNewAddress(): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('getnewaddress', []);
   }
+
+  /**
+   * Send an amount to a given address.
+   * Returns transaction id.
+   */
+  public sendToAddress(
+    dest: string,
+    amount: number,
+    comment?: string,
+    commentTo?: string,
+    subtractFeeFromAmount?: boolean,
+    useIS?: boolean,
+    usePS?: boolean
+  ): Promise<CallResult<string>> {
+    const params = [
+      dest,
+      amount,
+      comment,
+      commentTo,
+      subtractFeeFromAmount,
+      useIS,
+      usePS
+    ];
+    const undefinedIndex = params.findIndex((v) => v === undefined);
+    if (undefinedIndex >= 0 && undefinedIndex < arguments.length -1) {
+      return Promise.reject("Undefined arguments found after defined arguments")
+    }
+    const filteredParams = params.filter((v) => v === undefined);
+    return this.callRPCMethod<string>('sendtoaddress', filteredParams);
+  }
 }
