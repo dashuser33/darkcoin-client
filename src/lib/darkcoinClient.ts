@@ -55,6 +55,8 @@ export default class DarkcoinClient {
     });
   }
 
+  // Wallet Methods
+
   /**
    * Returns an object containing various wallet state info.
    */
@@ -97,5 +99,11 @@ export default class DarkcoinClient {
     }
     const filteredParams = params.filter((v) => v === undefined);
     return this.callRPCMethod<string>('sendtoaddress', filteredParams);
+  }
+  
+  // Masternode and Governance Stuff
+
+  public masternodeList(): Promise<CallResult<DashD.MasterNodeList>> {
+    return this.callRPCMethod<DashD.MasterNodeList>('masternodelist', []);
   }
 }
