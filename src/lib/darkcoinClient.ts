@@ -101,9 +101,18 @@ export default class DarkcoinClient {
     return this.callRPCMethod<string>('sendtoaddress', filteredParams);
   }
   
-  // Masternode and Governance Stuff
-
+  // Masternodes
+  
   public masternodeList(): Promise<CallResult<DashD.MasterNodeList>> {
     return this.callRPCMethod<DashD.MasterNodeList>('masternodelist', []);
   }
-}
+
+  // GObjects
+
+  /**
+   * Returns a list of all current GObjects. Will include both funding gobjects and trigger gobjects, so make sure to parse them and pull out the ones you want.
+   */
+  public gobjectList(): Promise<CallResult<DashD.GObjectList>> {
+    return this.callRPCMethod<DashD.GObjectList>('gobject', ['list']);
+  }
+  

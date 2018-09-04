@@ -1,3 +1,5 @@
+type booleanString = "true" | "false";
+
 export interface WalletInfo {
   /**
    * the wallet version
@@ -92,14 +94,87 @@ export interface MasterNode {
    */
 }
 
+// Masternode Stuff
+
 export interface MasterNodeList {
+  /**
+   * the key/value dictionary of masternodes
+   */
   [key:string]: MasterNode
 }
 
-export interface GObject {
+// Gobject Stuff
 
+export interface GObject {
+  readonly DataHex: string;
+  /**
+   * the hex representation of this gobject
+   */
+  readonly DataString: string;
+  /**
+   * the psuedo JSON representation of the gobject
+   */
+  readonly Hash: string;
+  /**
+   * the hash of the governance object
+   */
+  readonly CollateralHash: string;
+  /**
+   * the hash of the collateral used to submit the proposal
+   */
+  readonly ObjectType: number;
+  /**
+   * type is either 1: funding, 2: trigger, 3:?
+   */
+  readonly CreationTime: number;
+  /**
+   * epoch timestamp in seconds for the creation time of the proposal
+   */
+  readonly AbsoluteYesCount: number;
+  /**
+   * the current valid absolute vote count for this proposal (yes votes - no votes)
+   */
+  readonly YesCount: number;
+  /**
+   * the current count of valid yes votes for this proposal
+   */
+  readonly NoCount: number;
+  /**
+   * the current count of valid no votes for this proposal
+   */
+  readonly AbstainCount: number;
+  /**
+   * the current count of valid abstain votes for this proposal
+   */
+  readonly fBlockchainValidity: booleanString;
+  /**
+   * not really used
+   */
+  readonly IsValidReason: string;
+  /**
+   * not really used
+   */
+  readonly fCachedValid: string;
+  /**
+   * not really used
+   */
+  readonly fCachedFunding: booleanString;
+  /**
+   * not really used
+   */
+  readonly fCachedDelete: booleanString;
+  /**
+   * not really used
+   */
+  readonly fCachedEndorsed: booleanString;
+  /**
+   * not really used
+   */
 }
 
 export interface GObjectList {
+  /**
+   * the key/value dictionary of gobjects
+   */
   [key:string]: GObject
 }
