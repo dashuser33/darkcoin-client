@@ -102,7 +102,9 @@ export default class DarkcoinClient {
   }
   
   // Masternodes
-  
+  /**
+   * Returns key/value dictionary pairs for all masternodes.
+   */
   public masternodeList(): Promise<CallResult<DashD.MasterNodeList>> {
     return this.callRPCMethod<DashD.MasterNodeList>('masternodelist', []);
   }
@@ -110,7 +112,8 @@ export default class DarkcoinClient {
   // GObjects
 
   /**
-   * Returns a list of all current GObjects. Will include both funding gobjects and trigger gobjects, so make sure to parse them and pull out the ones you want.
+   * Returns key/value pairs for all current GObjects with the key. Will include both funding gobjects and trigger gobjects,
+   * Make sure to parse them and pull out the ones you want.
    */
   public gobjectList(): Promise<CallResult<DashD.GObjectList>> {
     return this.callRPCMethod<DashD.GObjectList>('gobject', ['list']);
