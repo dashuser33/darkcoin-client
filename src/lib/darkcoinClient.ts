@@ -82,7 +82,7 @@ export default class DarkcoinClient {
     useIS?: boolean,
     usePS?: boolean
   ): Promise<CallResult<string>> {
-    const params = [
+    const params: ReadonlyArray<any> = [
       dest,
       amount,
       comment,
@@ -91,11 +91,25 @@ export default class DarkcoinClient {
       useIS,
       usePS
     ];
-    const undefinedIndex = params.findIndex((v) => v === undefined);
-    if (undefinedIndex >= 0 && undefinedIndex < arguments.length -1) {
-      return Promise.reject("Undefined arguments found after defined arguments")
+    return this.filterUndefined(arguments, params).then(filteredParams =>
+      this.callRPCMethod<string>('sendtoaddress', filteredParams)
+    );
+  }
+  /**
+   * Build the parameter list by removing optional arguments
+   * @param originalArgs original argument list
+   * @param params
+   */
+  private filterUndefined<T>(
+    originalArgs: IArguments,
+    params: ReadonlyArray<T>
+  ): Promise<ReadonlyArray<T>> {
+    const undefinedIndex = params.findIndex(v => v === undefined);
+    if (undefinedIndex >= 0 && undefinedIndex < originalArgs.length - 1) {
+      return Promise.reject(
+        new Error('Undefined arguments found after defined arguments.')
+      );
     }
-    const filteredParams = params.filter((v) => v === undefined);
-    return this.callRPCMethod<string>('sendtoaddress', filteredParams);
+    return Promise.resolve(params.filter(v => v === undefined));
   }
 }
