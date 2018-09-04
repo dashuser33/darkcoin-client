@@ -95,3 +95,11 @@ export interface MasterNode {
 export interface MasterNodeList {
   [key:string]: MasterNode
 }
+
+export interface GObject {
+
+}
+
+export interface GObjectList {
+  [key:string]: GObject
+}
