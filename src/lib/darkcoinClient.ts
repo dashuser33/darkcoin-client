@@ -50,9 +50,19 @@ export default class DarkcoinClient {
     });
 
     return req.run().then(response => {
-      console.log(JSON.stringify(response));
       return (response as any) as CallResult<T>;
     });
+  }
+
+  /**
+   * Mark in-wallet transaction <txid> as abandoned
+   * This will mark this transaction and all its in-wallet descendants as abandoned which will allow
+   * for their inputs to be respent.  It can be used to replace "stuck" or evicted transactions.
+   * It only works on transactions which are not included in a block and are not currently in the mempool.
+   * It has no effect on transactions which are already conflicted or abandoned.
+   */
+  public abandonTransaction(txId: string): Promise<CallResult<null>> {
+    return this.callRPCMethod<null>('abandontransaction', [txId]);
   }
 
   /**
@@ -95,6 +105,25 @@ export default class DarkcoinClient {
       this.callRPCMethod<string>('sendtoaddress', filteredParams)
     );
   }
+
+  /**
+   * Set the transaction fee per kB. Overwrites the paytxfee parameter.
+   * @param amount The transaction fee in DASH/kB
+   */
+  public setTxFee(amount: number): Promise<CallResult<boolean>> {
+    return this.callRPCMethod<boolean>('settxfee', [amount]);
+  }
+
+  /**
+   * Sign a message with the private key of an address
+   * @param address The dash address to use for the private key.
+   * @param message The message to create a signature of.
+   * @returns The signature of the message encoded in base 64
+   */
+  public signMessage(address: string, message: string): Promise<CallResult<string>> {
+    return this.callRPCMethod<string>('signmessage', [address, message]);
+  }
+
   /**
    * Build the parameter list by removing optional arguments
    * @param originalArgs original argument list
@@ -110,6 +139,6 @@ export default class DarkcoinClient {
         new Error('Undefined arguments found after defined arguments.')
       );
     }
-    return Promise.resolve(params.filter(v => v === undefined));
+    return Promise.resolve(params.filter(v => v !== undefined));
   }
 }
