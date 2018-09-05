@@ -45,53 +45,58 @@ export interface WalletInfo {
   readonly paytxfee: number;
 }
 
+// Masternodes
+
 export interface MasterNode {
-  readonly address: string;
   /**
    * the masternode IP address
    */
-  readonly payee: string;
+  readonly address: string;
   /**
    * the masternode public key address
    */
-  readonly status: string;
+  readonly payee: string;
   /**
    * the status of the masternode
    */
-  readonly protocol: number;
+  readonly status: string;
   /**
    * the protocol version number of the masternode
    */
-  readonly daemonversion: string;
+  readonly protocol: number;
   /**
    * the daemon version of the masternode (sometimes is 'UNKNOWN')
    */
-  readonly sentinelversion: string;
+  readonly daemonversion: string;
   /**
-   * the sentinel version of the masternode
+   * the version of sentinel running on the masternode
    */
-  readonly sentinelstate: string;
+  readonly sentinelversion: string;
   /**
    * the sentinel state of the masternode
    */
-  readonly lastseen: string;
+  readonly sentinelstate: string;
   /**
    * the epoch time for when the node was last seen by our node
    */
-  readonly activeseconds: string;
+  readonly lastseen: string;
   /**
    * time time in seconds since the node was first seen
    */
-  readonly lastpaidtime: string;
+  readonly activeseconds: string;
   /**
    * the epoch time for when the node was last paid
    */
-  readonly lastpaidblock: string;
+  readonly lastpaidtime: string;
   /**
    * the block height at which the node was last paid
    */
+  readonly lastpaidblock: string;
 }
 
 export interface MasterNodeList {
+  /**
+   * the key/value dictionary of masternodes
+   */
   [key:string]: MasterNode
 }
