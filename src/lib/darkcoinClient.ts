@@ -132,4 +132,10 @@ export default class DarkcoinClient {
   public gobjectList(): Promise<CallResult<DashD.GObjectList>> {
     return this.callRPCMethod<DashD.GObjectList>('gobject', ['list']);
   }
+
+  public gobjectCurrentVotes(
+    hash: string
+  ): Promise<CallResult<DashD.GObjectCurrentVotesList>> {
+    return this.callRPCMethod<DashD.GObjectCurrentVotesList>('gobject', ['getcurrentvotes', hash]);
+  } 
 }

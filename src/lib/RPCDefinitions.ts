@@ -178,3 +178,18 @@ export interface GObjectList {
    */
   [key:string]: GObject
 }
+
+export interface GObjectVote {
+  /**
+   * vote_hash, vinMasternode, time, outcome, and signal of the vote.
+   * Seperator used is ':'
+   */
+  vote_info: string;
+}
+
+export interface GObjectCurrentVotesList {
+  /**
+   * An array of votes
+   */
+  [key:string]: GObjectVote;
+}
