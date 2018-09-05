@@ -47,54 +47,54 @@ export interface WalletInfo {
   readonly paytxfee: number;
 }
 
+// Masternodes
+
 export interface MasterNode {
-  readonly address: string;
   /**
    * the masternode IP address
    */
-  readonly payee: string;
+  readonly address: string;
   /**
    * the masternode public key address
    */
-  readonly status: string;
+  readonly payee: string;
   /**
    * the status of the masternode
    */
-  readonly protocol: number;
+  readonly status: string;
   /**
    * the protocol version number of the masternode
    */
-  readonly daemonversion: string;
+  readonly protocol: number;
   /**
    * the daemon version of the masternode (sometimes is 'UNKNOWN')
    */
-  readonly sentinelversion: string;
+  readonly daemonversion: string;
   /**
-   * the sentinel version of the masternode
+   * the version of sentinel running on the masternode
    */
-  readonly sentinelstate: string;
+  readonly sentinelversion: string;
   /**
    * the sentinel state of the masternode
    */
-  readonly lastseen: string;
+  readonly sentinelstate: string;
   /**
    * the epoch time for when the node was last seen by our node
    */
-  readonly activeseconds: string;
+  readonly lastseen: string;
   /**
    * time time in seconds since the node was first seen
    */
-  readonly lastpaidtime: string;
+  readonly activeseconds: string;
   /**
    * the epoch time for when the node was last paid
    */
-  readonly lastpaidblock: string;
+  readonly lastpaidtime: string;
   /**
    * the block height at which the node was last paid
    */
+  readonly lastpaidblock: string;
 }
-
-// Masternode Stuff
 
 export interface MasterNodeList {
   /**
@@ -103,48 +103,51 @@ export interface MasterNodeList {
   [key:string]: MasterNode
 }
 
-// Gobject Stuff
+// Gobjects
 
 export interface GObject {
-  readonly DataHex: string;
   /**
    * the hex representation of this gobject
    */
-  readonly DataString: string;
+  readonly DataHex: string;
   /**
    * the psuedo JSON representation of the gobject
    */
-  readonly Hash: string;
+  readonly DataString: string;
   /**
    * the hash of the governance object
    */
-  readonly CollateralHash: string;
+  readonly Hash: string;
   /**
    * the hash of the collateral used to submit the proposal
    */
-  readonly ObjectType: number;
+  readonly CollateralHash: string;
   /**
-   * type is either 1: funding, 2: trigger, 3:?
+   * type is either 1: Unknown, 2: Proposals, 3: Trigger, 4: Watchdog
    */
-  readonly CreationTime: number;
+  readonly ObjectType: number;
   /**
    * epoch timestamp in seconds for the creation time of the proposal
    */
-  readonly AbsoluteYesCount: number;
+  readonly CreationTime: number;
   /**
    * the current valid absolute vote count for this proposal (yes votes - no votes)
    */
-  readonly YesCount: number;
+  readonly AbsoluteYesCount: number;
   /**
    * the current count of valid yes votes for this proposal
    */
-  readonly NoCount: number;
+  readonly YesCount: number;
   /**
    * the current count of valid no votes for this proposal
    */
-  readonly AbstainCount: number;
+  readonly NoCount: number;
   /**
    * the current count of valid abstain votes for this proposal
+   */
+  readonly AbstainCount: number;
+  /**
+   * not really used
    */
   readonly fBlockchainValidity: booleanString;
   /**
@@ -167,9 +170,6 @@ export interface GObject {
    * not really used
    */
   readonly fCachedEndorsed: booleanString;
-  /**
-   * not really used
-   */
 }
 
 export interface GObjectList {
