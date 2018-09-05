@@ -100,7 +100,7 @@ export interface MasterNodeList {
   /**
    * the key/value dictionary of masternodes
    */
-  [key:string]: MasterNode
+  readonly [key:string]: MasterNode
 }
 
 // Gobjects
@@ -176,7 +176,7 @@ export interface GObjectList {
   /**
    * the key/value dictionary of gobjects
    */
-  [key:string]: GObject
+  readonly [key:string]: GObject
 }
 
 
@@ -185,14 +185,14 @@ export interface GObjectVote {
    * vote_hash, vinMasternode, time, outcome, and signal of the vote.
    * Seperator used is ':'
    */
-  vote_info: string;
+  readonly vote_info: string;
 }
 
 export interface GObjectCurrentVotesList {
   /**
    * An array of votes
    */
-  [key:string]: GObjectVote;
+  readonly [key:string]: GObjectVote;
 }
 
 // Network Information
