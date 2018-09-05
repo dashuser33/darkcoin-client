@@ -1,3 +1,5 @@
+import { read } from "fs";
+
 type booleanString = "true" | "false";
 
 export interface WalletInfo {
@@ -177,4 +179,42 @@ export interface GObjectList {
    * the key/value dictionary of gobjects
    */
   [key:string]: GObject
+}
+
+// Network Information
+
+export interface GovernanceInfo {
+  /**
+   * the minimum quroum amount, should be used a percantage. i.e. a response of 10 = 10%
+   */
+  readonly governanceminquorum: number;
+  /**
+   * the maximum number of seconds allowed between watchdog pings
+   */
+  readonly masternodewatchdogmaxseconds: number;
+  /**
+   * the maximum number of seconds allowed between sentinel pings
+   */
+  readonly sentinelpingmaxseconds: number;
+  /**
+   * the proposal fee amount
+   */
+  readonly proposalfee: number;
+  /**
+   * the number of blocks between superblocks
+   */
+  readonly superblockcycle: number;
+  /**
+   * the last superblock mined
+   */
+  readonly lastsuperblock: number;
+  /**
+   * the next superblock to be mined
+   */
+  readonly nextsuperblock: number;
+  /**
+   * the maximum size in bytes (I think) of a governance object
+   */
+  readonly maxgovobjdatasize: number;
+
 }
