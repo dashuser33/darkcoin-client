@@ -135,10 +135,23 @@ export default class DarkcoinClient {
 
   // Network Information 
 
+  /**
+   * The getnetworkinfo RPC returns information about the node’s connection to the network.
+   */
+  public getNetworkInfo(): Promise<CallResult<DashD.NetworkInfo>> {
+    return this.callRPCMethod<DashD.NetworkInfo>('getnetworkinfo', []);
+  }
+
+  /**
+   * Returns network related governance info, i.e. superblock height, proposal fee, and minquorum.
+   */
   public getGovernanceInfo(): Promise<CallResult<DashD.GovernanceInfo>> {
     return this.callRPCMethod<DashD.GovernanceInfo>('getgovernanceinfo', []);
   }
 
+  /**
+   * Returns mining related info, i.e. difficulty, blocksize, currentblocktx, and a network hash rate estimate.
+   */
   public getMiningInfo(): Promise<CallResult<DashD.MiningInfo>> {
     return this.callRPCMethod<DashD.MiningInfo>('getmininginfo', []);
   }

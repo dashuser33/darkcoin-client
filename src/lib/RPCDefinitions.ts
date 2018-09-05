@@ -181,6 +181,103 @@ export interface GObjectList {
 
 // Network Information
 
+export interface Network {
+  /**
+   * The name of the network. Either ipv4, ipv6, or onion
+   */
+  readonly name: string;
+  /**
+   * Set to true if only connections to this network are allowed according to the -onlynet Dash Core command-line/configuration-file parameter. Otherwise set to false
+   */
+  readonly limited: booleanString;
+  /**
+   * Set to true if connections can be made to or from this network. Otherwise set to false
+   */
+  readonly reachable: booleanString;
+  /**
+   * The hostname and port of any proxy being used for this network. If a proxy is not in use, an empty string
+   */
+  readonly proxy: string;
+  /**
+   * Added in Bitcoin Core 0.11.0
+   * Set to true if randomized credentials are set for this proxy. Otherwise set to false
+   */
+  readonly proxy_randomize_credentials: booleanString;
+}
+
+export interface LocalAddresses {
+  /**
+   * An IP address or .onion address this node believes it listens on. This may be manually configured, auto detected, or based on version messages this node received from its peers
+   */
+  readonly address: string;
+  /**
+   * The port number this node believes it listens on for the associated address. This may be manually configured, auto detected, or based on version messages this node received from its peers
+   */
+  readonly port: number;
+  /**
+   * The number of incoming connections during the uptime of this node that have used this address in their version message
+   */
+  readonly score: number;
+}
+
+export interface NetworkInfo {
+  /**
+   * This node’s version of Dash Core in its internal integer format. For example, Dash Core 0.12.2 has the integer version number 120200
+   */
+  readonly version: number;
+  /**
+   * The user agent this node sends in its version message
+   */
+  readonly subversion: string;
+  /**
+   * The protocol version number used by this node. See the protocol versions section for more information
+   */
+  readonly protocolversion: number;
+  /**
+   * The services supported by this node as advertised in its version message
+   */
+  readonly localservices: number;
+  /**
+   * Added in Bitcoin Core 0.13.0
+   * The services supported by this node as advertised in its version message
+   */
+  readonly localrelay: booleanString;
+  /**
+   * The offset of the node’s clock from the computer’s clock (both in UTC) in seconds. The offset may be up to 4200 seconds (70 minutes)
+   */
+  readonly timeoffset: number;
+  /**
+   * Is network active
+   */
+  readonly networkactive: booleanString;
+  /**
+   * The total number of open connections (both outgoing and incoming) between this node and other nodes
+   */
+  readonly connections: number;
+  /**
+   * An object describing a network. If the network is unroutable, it will not be returned
+   */
+  readonly networks: [Network];
+  /**
+   * The minimum relay fee for non-free transactions in order for this node to accept it into its memory pool
+   */
+  readonly relayfee: number;
+  /**
+   * Added in Dash Core 0.12.3
+   * The minimum fee increment for mempool limiting or BIP 125 replacement in DASH/kB
+   */
+  readonly incrementalfee: number;
+  /**
+   * An array of objects each describing the local addresses this node believes it listens on
+   */
+  readonly localaddresses: [LocalAddresses];
+  /**
+   * Added in Bitcoin Core 0.11.0
+   * A plain-text description of any network warnings. If there are no warnings, an empty string will be returned.
+   */
+  readonly warnings: string;
+}
+
 export interface GovernanceInfo {
   /**
    * the absolute minimum number of votes needed to trigger a governance action
