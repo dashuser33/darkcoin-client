@@ -247,7 +247,7 @@ export interface NetworkInfo {
    */
   readonly timeoffset: number;
   /**
-   * Is network active
+   * Is network active. Couldn't really find much information about this though.
    */
   readonly networkactive: booleanString;
   /**
