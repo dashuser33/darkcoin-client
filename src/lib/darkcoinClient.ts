@@ -162,6 +162,12 @@ export default class DarkcoinClient {
     return this.callRPCMethod<DashD.GObjectList>('gobject', ['list']);
   }
 
+  public gobjectCurrentVotes(
+    hash: string
+  ): Promise<CallResult<DashD.GObjectCurrentVotesList>> {
+    return this.callRPCMethod<DashD.GObjectCurrentVotesList>('gobject', ['getcurrentvotes', hash]);
+  } 
+
   // Network Information 
 
   /**
@@ -184,5 +190,4 @@ export default class DarkcoinClient {
   public getMiningInfo(): Promise<CallResult<DashD.MiningInfo>> {
     return this.callRPCMethod<DashD.MiningInfo>('getmininginfo', []);
   }
-
 }
