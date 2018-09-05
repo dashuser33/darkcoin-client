@@ -139,5 +139,8 @@ export default class DarkcoinClient {
     return this.callRPCMethod<DashD.GovernanceInfo>('getgovernanceinfo', []);
   }
 
-  
+  public getMiningInfo(): Promise<CallResult<DashD.MiningInfo>> {
+    return this.callRPCMethod<DashD.MiningInfo>('getmininginfo', []);
+  }
+
 }

@@ -1,5 +1,3 @@
-import { read } from "fs";
-
 type booleanString = "true" | "false";
 
 export interface WalletInfo {
@@ -185,15 +183,17 @@ export interface GObjectList {
 
 export interface GovernanceInfo {
   /**
-   * the minimum quroum amount, should be used a percantage. i.e. a response of 10 = 10%
+   * the absolute minimum number of votes needed to trigger a governance action
    */
   readonly governanceminquorum: number;
   /**
-   * the maximum number of seconds allowed between watchdog pings
+   * Deprecated in Dash Core 0.12.3.0
+   * sentinel watchdog expiration time in seconds
    */
   readonly masternodewatchdogmaxseconds: number;
   /**
-   * the maximum number of seconds allowed between sentinel pings
+   * Added in Dash Core 0.12.3.0
+   * sentinel ping expiration time in seconds
    */
   readonly sentinelpingmaxseconds: number;
   /**
@@ -217,4 +217,50 @@ export interface GovernanceInfo {
    */
   readonly maxgovobjdatasize: number;
 
+}
+
+export interface MiningInfo {
+  /**
+   * The height of the highest block on the local best block chain
+   */
+  readonly blocks: number;
+  /**
+   * If generation was enabled since the last time this node was restarted, this is the size in bytes of the last block built by this node for header hash checking. Otherwise, the value 0
+   */
+  readonly currentblocksize: number;
+  /**
+   * If generation was enabled since the last time this node was restarted, this is the number of transactions in the last block built by this node for header hash checking. Otherwise, this is the value 0
+   */
+  readonly currentblocktx: number;
+  /**
+   * If generation was enabled since the last time this node was restarted, this is the difficulty of the highest-height block in the local best block chain. Otherwise, this is the value 0
+   */
+  readonly difficulty: number;
+  /**
+   * A plain-text description of any errors this node has encountered or detected. If there are no errors, an empty string will be returned. This is not related to the JSON-RPC error field.
+   */
+  readonly errors: string;
+  /**
+   * The processor limit for generation (-1 if no generation - see getgenerate or setgenerate calls).
+   * Removed in Bitcoin Core 0.13.0
+   */
+  readonly genproclimit: number;
+  /**
+   * An estimate of the number of hashes per second the network is generating to maintain the current difficulty. See the getnetworkhashps RPC for configurable access to this data
+   */
+  readonly networkhashps: number;
+  /**
+   * Set to true if this node is running on testnet. Set to false if this node is on mainnet or a regtest
+   * Removed in Bitcoin Core 0.14.0
+   */
+  readonly testnet: booleanString;
+  /**
+   * Set to main for mainnet, test for testnet, and regtest for regtest
+   */
+  readonly chain: string;
+  /**
+   * Set to true if generation is currently enabled; set to false if generation is currently disabled. Only returned if the node has wallet support enabled
+   * Removed in Bitcoin Core 0.13.0
+   */
+  readonly generate: booleanString;
 }
