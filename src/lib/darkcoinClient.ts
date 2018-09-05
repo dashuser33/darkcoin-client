@@ -54,6 +54,7 @@ export default class DarkcoinClient {
     });
   }
 
+
   // Wallet Methods
 
   /**
@@ -126,25 +127,9 @@ export default class DarkcoinClient {
     return this.callRPCMethod<string>('signmessage', [address, message]);
   }
 
-  /**
-   * Build the parameter list by removing optional arguments
-   * @param originalArgs original argument list
-   * @param params
-   */
-  private filterUndefined<T>(
-    originalArgs: IArguments,
-    params: ReadonlyArray<T>
-  ): Promise<ReadonlyArray<T>> {
-    const undefinedIndex = params.findIndex(v => v === undefined);
-    if (undefinedIndex >= 0 && undefinedIndex < originalArgs.length - 1) {
-      return Promise.reject(
-        new Error('Undefined arguments found after defined arguments.')
-      );
-    }
-    return Promise.resolve(params.filter(v => v !== undefined));
-  }
-  
+
   // Masternodes
+
   /**
    * Returns key/value dictionary pairs for all masternodes.
    */
@@ -153,6 +138,20 @@ export default class DarkcoinClient {
   }
 
   // GObjects
+
+  /**
+   * Prepare GObject
+   */
+  public gobjectPrepare(parentHash: string, revision: number, creationTime: number, gobjectData: string): Promise<CallResult<string>> {
+    return this.callRPCMethod<string>('gobject', ['prepare', parentHash, revision, creationTime, gobjectData]);
+  }
+
+  /**
+   * Submit GObject
+   */
+  public gobjectSubmit(parentHash: number, revision: number, creation_time: number, gobject_data: string, txId: string): Promise<CallResult<string>> {
+    return this.callRPCMethod<string>('gobject', ['submit', parentHash, revision, creation_time, gobject_data, txId]);
+  }
 
   /**
    * Returns key/value pairs for all current GObjects with the key. Will include both funding gobjects and trigger gobjects,
@@ -166,7 +165,8 @@ export default class DarkcoinClient {
     hash: string
   ): Promise<CallResult<DashD.GObjectCurrentVotesList>> {
     return this.callRPCMethod<DashD.GObjectCurrentVotesList>('gobject', ['getcurrentvotes', hash]);
-  } 
+  }
+
 
   // Network Information 
 
@@ -189,5 +189,26 @@ export default class DarkcoinClient {
    */
   public getMiningInfo(): Promise<CallResult<DashD.MiningInfo>> {
     return this.callRPCMethod<DashD.MiningInfo>('getmininginfo', []);
+  }
+
+
+  // Private Methods
+  
+  /**
+   * Build the parameter list by removing optional arguments
+   * @param originalArgs original argument list
+   * @param params
+   */
+  private filterUndefined<T>(
+    originalArgs: IArguments,
+    params: ReadonlyArray<T>
+  ): Promise<ReadonlyArray<T>> {
+    const undefinedIndex = params.findIndex(v => v === undefined);
+    if (undefinedIndex >= 0 && undefinedIndex < originalArgs.length - 1) {
+      return Promise.reject(
+        new Error('Undefined arguments found after defined arguments.')
+      );
+    }
+    return Promise.resolve(params.filter(v => v !== undefined));
   }
 }
