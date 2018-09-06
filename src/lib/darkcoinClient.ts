@@ -142,14 +142,14 @@ export default class DarkcoinClient {
   /**
    * Prepare GObject
    */
-  public gobjectPrepare(parentHash: number, revision: number, creationTime: number, gobjectData: string): Promise<CallResult<string>> {
+  public gobjectPrepare(parentHash: string, revision: string, creationTime: string, gobjectData: string): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('gobject', ['prepare', parentHash, revision, creationTime, gobjectData]);
   }
 
   /**
    * Submit GObject
    */
-  public gobjectSubmit(parentHash: number, revision: number, creationTime: number, gobjectData: string, txId: string): Promise<CallResult<string>> {
+  public gobjectSubmit(parentHash: string, revision: string, creationTime: string, gobjectData: string, txId: string): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('gobject', ['submit', parentHash, revision, creationTime, gobjectData, txId]);
   }
 
