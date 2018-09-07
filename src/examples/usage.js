@@ -1,6 +1,6 @@
 "use strict";
 
-var DarkcoinClient = require("darkcoin-client").default;
+var DarkcoinClient = require("darkcoin-client").DarkcoinClient;
 
 var config = {
   url: 'http://localhost:19998',

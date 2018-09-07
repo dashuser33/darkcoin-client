@@ -22,7 +22,7 @@ export interface DashdConfig {
 /**
  * Client instance for doing RPC calls on Dashd
  */
-export default class DarkcoinClient {
+export class DarkcoinClient {
   public readonly config: DashdConfig;
   constructor(dashdConfig: DashdConfig) {
     this.config = dashdConfig;
