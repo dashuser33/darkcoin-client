@@ -54,6 +54,8 @@ export class DarkcoinClient {
     });
   }
 
+  // Wallet Methods
+
   /**
    * Mark in-wallet transaction <txid> as abandoned
    * This will mark this transaction and all its in-wallet descendants as abandoned which will allow
@@ -140,5 +142,52 @@ export class DarkcoinClient {
       );
     }
     return Promise.resolve(params.filter(v => v !== undefined));
+  }
+  
+  // Masternodes
+  /**
+   * Returns key/value dictionary pairs for all masternodes.
+   */
+  public masternodeList(): Promise<CallResult<DashD.MasterNodeList>> {
+    return this.callRPCMethod<DashD.MasterNodeList>('masternodelist', []);
+  }
+
+  // GObjects
+
+  /**
+   * Returns key/value pairs for all current GObjects with the key. Will include both funding gobjects and trigger gobjects,
+   * Make sure to parse them and pull out the ones you want.
+   */
+  public gobjectList(): Promise<CallResult<DashD.GObjectList>> {
+    return this.callRPCMethod<DashD.GObjectList>('gobject', ['list']);
+  }
+
+  public gobjectCurrentVotes(
+    hash: string
+  ): Promise<CallResult<DashD.GObjectCurrentVotesList>> {
+    return this.callRPCMethod<DashD.GObjectCurrentVotesList>('gobject', ['getcurrentvotes', hash]);
+  } 
+
+  // Network Information 
+
+  /**
+   * The getnetworkinfo RPC returns information about the node’s connection to the network.
+   */
+  public getNetworkInfo(): Promise<CallResult<DashD.NetworkInfo>> {
+    return this.callRPCMethod<DashD.NetworkInfo>('getnetworkinfo', []);
+  }
+
+  /**
+   * Returns network related governance info, i.e. superblock height, proposal fee, and minquorum.
+   */
+  public getGovernanceInfo(): Promise<CallResult<DashD.GovernanceInfo>> {
+    return this.callRPCMethod<DashD.GovernanceInfo>('getgovernanceinfo', []);
+  }
+
+  /**
+   * Returns mining related info, i.e. difficulty, blocksize, currentblocktx, and a network hash rate estimate.
+   */
+  public getMiningInfo(): Promise<CallResult<DashD.MiningInfo>> {
+    return this.callRPCMethod<DashD.MiningInfo>('getmininginfo', []);
   }
 }
