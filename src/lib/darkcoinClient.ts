@@ -140,17 +140,28 @@ export default class DarkcoinClient {
   // GObjects
 
   /**
-   * Prepare GObject
+   * The gobject prepare RPC prepares a governance object by signing and creating a collateral transaction.
+   * @param parentHash Hash of the parent object. usually the root node which has a hash of 0
+   * @param revision Object revision number (Always 0)
+   * @param creationTime Creation time as a unix timestamp
+   * @param gobjectData Object data (JSON object with governance details)
+   * @returns Transaction id for the collateral transaction
    */
-  public gobjectPrepare(parentHash: string, revision: string, creationTime: string, gobjectData: string): Promise<CallResult<string>> {
-    return this.callRPCMethod<string>('gobject', ['prepare', parentHash, revision, creationTime, gobjectData]);
+  public gobjectPrepare(parentHash: string, revision: number, creationTime: number, gobjectData: string): Promise<CallResult<string>> {
+    return this.callRPCMethod<string>('gobject', ['prepare', parentHash.toString, revision.toString, creationTime.toString, gobjectData]);
   }
 
   /**
-   * Submit GObject
+   * The gobject submit RPC submits a governance object to network (objects must first be prepared via gobject prepare).
+   * @param parentHash Hash of the parent object. Usually the root node which has a hash of 0
+   * @param revision Object revision number (Always 0)
+   * @param creationTime Creation time as a unix timestamp (I think it needs to match the timestamp used in gobjectPrepare)
+   * @param gobjectData Object data (JSON object with governance details)
+   * @param txID Collateral transaction ID
+   * @returns The resulting governance object hash
    */
-  public gobjectSubmit(parentHash: string, revision: string, creationTime: string, gobjectData: string, txId: string): Promise<CallResult<string>> {
-    return this.callRPCMethod<string>('gobject', ['submit', parentHash, revision, creationTime, gobjectData, txId]);
+  public gobjectSubmit(parentHash: string, revision: number, creationTime: number, gobjectData: string, txId: string): Promise<CallResult<string>> {
+    return this.callRPCMethod<string>('gobject', ['submit', parentHash.toString, revision.toString, creationTime.toString, gobjectData, txId]);
   }
 
   /**
