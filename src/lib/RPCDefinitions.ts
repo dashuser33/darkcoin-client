@@ -377,3 +377,12 @@ export interface MiningInfo {
    */
   readonly generate: booleanString;
 }
+
+/**
+ * Represents the output in a particular transaction.
+ * Note that the output of a transaction may be referred to as an input from the wallet perspective.
+ */
+export interface TransactionOutput {
+  readonly txId: string;
+  readonly vout: number;
+}
