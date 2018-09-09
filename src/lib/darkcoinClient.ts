@@ -82,6 +82,51 @@ export class DarkcoinClient {
   }
 
   /**
+   * Get all transactions in blocks since block [blockhash], or all transactions if omitted
+   * @param headerHash The hash of a block header encoded as hex in RPC byte order.
+   * All transactions affecting the wallet which are not in that block or any earlier
+   * block will be returned, including unconfirmed transactions. Default is the hash
+   * of the genesis block, so all transactions affecting the wallet are returned by default
+   * @param targetConfirmations Sets the lastblock field of the results to the header
+   * hash of a block with this many confirmations.
+   * This does not affect which transactions are returned.
+   * Default is 1, so the hash of the most recent block on the local best block chain is returned
+   * @param includeWatchOnly If set to true, include watch-only addresses in details and
+   * calculations as if they were regular addresses belonging to the wallet.
+   * If set to false (the default), treat watch-only addresses as if they didn’t
+   * belong to this wallet
+   */
+  public listSinceBlock(headerHash?: string, targetConfirmations?: number, includeWatchOnly?: boolean): Promise<CallResult<ReadonlyArray<DashD.Transaction>>> {
+    const params: ReadonlyArray<any> = [
+      headerHash,
+      targetConfirmations,
+      includeWatchOnly
+    ];
+    return this.filterUndefined(arguments, params).then(filteredParams =>
+      this.callRPCMethod<ReadonlyArray<DashD.Transaction>>('listsinceblock', filteredParams)
+    );
+  }
+
+  /**
+   * Returns the most recent transactions that affect the wallet.
+   * @param count The number of transactions to return. default 10
+   * @param skip The number of transactions to return. default 0
+   * @param includeWatchOnly Include transactions to watch-only addresses
+   * (see 'importaddress'). default false
+   */
+  public listTransactions(count?: number, skip?: number, includeWatchOnly?: boolean): Promise<CallResult<ReadonlyArray<DashD.Transaction>>> {
+    const params: ReadonlyArray<any> = [
+      '*', // account
+     count,
+     skip,
+     includeWatchOnly
+    ];
+    return this.filterUndefined(arguments, params).then(filteredParams =>
+      this.callRPCMethod<ReadonlyArray<DashD.Transaction>>('listtransactions', filteredParams)
+    );
+  }
+
+  /**
    * Send an amount to a given address.
    * Returns transaction id.
    */

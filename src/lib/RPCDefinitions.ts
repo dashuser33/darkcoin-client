@@ -377,3 +377,144 @@ export interface MiningInfo {
    */
   readonly generate: booleanString;
 }
+
+/**
+ * A payment or internal accounting entry
+ */
+export interface Transaction {
+  /**
+   * @deprecated
+   * The account which the payment was credited to or debited from.
+   * May be an empty string (“”) for the default account
+   */
+  readonly account: string;
+  /**
+   * The address paid in this payment, which may be someone else’s address not
+   * belonging to this wallet. May be empty if the address is unknown, such as
+   * when paying to a non-standard pubkey script or if this is in the move category
+   */
+  readonly address?: string;
+  /**
+   * Set to one of the following values:
+   * send if sending payment
+   * receive if this wallet received payment in a regular transaction
+   * generate if a matured and spendable coinbase
+   * immature if a coinbase that is not spendable yet
+   * orphan if a coinbase from a block that’s not in the local best block chain
+   * move if an off-block-chain move made with the move RPC
+   */
+  readonly category: string;
+  /**
+   * A negative dash amount if sending payment; a positive dash amount if receiving payment (including coinbases)
+   */
+  readonly amount: number;
+  /**
+   * A comment for the address/transaction
+   */
+  readonly label?: string;
+  /**
+   * For an output, the output index (vout) for this output in this transaction.
+   * For an input, the output index for the output being spent in its transaction.
+   * Because inputs list the output indexes from previous transactions, more than
+   * one entry in the details array may have the same output index. Not returned
+   * for move category payments
+   */
+  readonly vout?: number;
+  /**
+   * The number of confirmations the transaction has received.
+   * Will be 0 for unconfirmed and -1 for conflicted.
+   * Not returned for move category payments
+   */
+  readonly confirmations?: number;
+  /**
+   *  Current transaction lock state. Available for 'send' and 'receive'
+   *  category of transactions.
+   */
+  readonly instantlock: boolean;
+  /**
+   * The hash of the block on the local best block chain which includes
+   * this transaction, encoded as hex in RPC byte order.
+   * Only returned for confirmed transactions
+   */
+  readonly blockhash?: string;
+  /**
+   * The index of the transaction in the block that includes it.
+   * Only returned for confirmed transactions
+   */
+  readonly blockindex?: number;
+  /**
+   *  The block time in seconds since epoch (1 Jan 1970 GMT)
+   */
+  readonly blocktime?: number;
+  /**
+   * The transaction id. Available for 'send' and 'receive' category of transactions.
+   */
+  readonly txid?: string;
+  /**
+   * An array containing the TXIDs of other transactions that spend the same
+   * inputs (UTXOs) as this transaction. Array may be empty. Not returned for
+   * move category payments
+   */
+  readonly walletconflicts?: ReadonlyArray<any>;
+  /**
+   * A Unix epoch time when the transaction was added to the wallet
+   */
+  readonly time: number;
+  /**
+   * A Unix epoch time when the transaction was detected by the local node,
+   * or the time of the block on the local best block chain that included the transaction.
+   * Not returned for move category payments
+   */
+  readonly timereceived: number;
+  /**
+   * Indicates if a transaction is replaceable under BIP125:
+   * yes replaceable
+   * no not replaceable
+   * unknown for unconfirmed transactions not in the mempool
+   */
+  readonly "bip125-replaceable": "yes" | "no" | "unknown";
+  /**
+   * For transaction originating with this wallet, a locally-stored comment
+   * added to the transaction identifying who the transaction was sent to.
+   * Only returned if a comment-to was added. Never returned by move category payments.
+   * May be an empty string
+   */
+  readonly to?: string;
+  /**
+   * If sending payment, the fee paid as a negative dash value. May be 0.
+   * Not returned if receiving payment or for move category payments
+   */
+  readonly fee?: number;
+  /**
+   * Indicates if a transaction is was abandoned:
+   * true if it was abandoned (inputs are respendable)
+   * false if it was not abandoned
+   * Only returned by send category payments
+   */
+  readonly abandoned?: boolean;
+  /**
+   * Whether we consider the outputs of this unconfirmed transaction safe to spend.
+   */
+  readonly trusted?: boolean;
+  /**
+   * Set to true if the transaction is a coinbase.
+   * Not returned for regular transactions or move category payments
+   */
+  readonly generated?: boolean;
+  /**
+   * This is the account the dash were moved from or moved to, as indicated by a
+   * negative or positive amount field in this payment.
+   * Only returned by move category payments
+   */
+  readonly otheraccount?: string;
+  /**
+   * If a comment is associated with the transaction.
+   */
+  readonly comment?: string;
+  /**
+   * Set to true if the payment involves a watch-only address. Otherwise not returned
+   */
+  readonly involvesWatchonly?: boolean;
+}
+
+
