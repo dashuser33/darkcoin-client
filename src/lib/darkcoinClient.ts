@@ -82,6 +82,25 @@ export class DarkcoinClient {
   }
 
   /**
+   * Returns the most recent transactions that affect the wallet.
+   * @param count The number of transactions to return. default 10
+   * @param skip The number of transactions to return. default 0
+   * @param includeWatchOnly Include transactions to watch-only addresses
+   * (see 'importaddress'). default false
+   */
+  public listTransactions(count?: number, skip?: number, includeWatchOnly?: boolean): Promise<CallResult<ReadonlyArray<DashD.Transaction>>> {
+    const params: ReadonlyArray<any> = [
+      '*', // account
+     count,
+     skip,
+     includeWatchOnly
+    ];
+    return this.filterUndefined(arguments, params).then(filteredParams =>
+      this.callRPCMethod<ReadonlyArray<DashD.Transaction>>('listtransactions', filteredParams)
+    );
+  }
+
+  /**
    * Send an amount to a given address.
    * Returns transaction id.
    */
