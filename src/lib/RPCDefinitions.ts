@@ -379,6 +379,14 @@ export interface MiningInfo {
 }
 
 /**
+ * Represents the output in a particular transaction.
+ * Note that the output of a transaction may be referred to as an input from the wallet perspective.
+ */
+export interface TransactionOutput {
+  readonly txId: string;
+  readonly vout: number;
+}
+
  * A payment or internal accounting entry
  */
 export interface Transaction {
@@ -516,5 +524,3 @@ export interface Transaction {
    */
   readonly involvesWatchonly?: boolean;
 }
-
-

@@ -82,6 +82,30 @@ export class DarkcoinClient {
   }
 
   /**
+
+   * Updates list of temporarily unspendable outputs.
+   * Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.
+   * T  If no transaction outputs are specified when unlocking then all current locked transaction outputs are unlocked.
+   * A locked transaction output will not be chosen by automatic coin selection, when spending dashs.
+   * Locks are stored in memory only. Nodes start with zero locked outputs, and the locked output list
+   * is always cleared (by virtue of process exit) when a node stops or fails.
+   * Also see the listunspent call
+   * @param unlock Whether to unlock (true) or lock (false) the specified transactions
+   * @param inputs list of transaction outputs
+   */
+  public lockUnspent(unlock: boolean, inputs: ReadonlyArray<DashD.TransactionOutput>): Promise<CallResult<boolean>> {
+    return this.callRPCMethod<boolean>('lockunspent', [unlock, inputs]);
+  }
+
+  /**
+   * deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds.
+   * This will affect wallet balances.
+   * @param txId The hex-encoded id of the transaction you are removing
+   */
+  public removePrunedFunds(txId: string): Promise<CallResult<null>> {
+    return this.callRPCMethod<null>('removeprunedfunds', [txId]);
+
+  /**
    * Get all transactions in blocks since block [blockhash], or all transactions if omitted
    * @param headerHash The hash of a block header encoded as hex in RPC byte order.
    * All transactions affecting the wallet which are not in that block or any earlier
