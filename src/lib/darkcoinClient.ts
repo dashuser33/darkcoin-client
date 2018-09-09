@@ -98,7 +98,7 @@ export class DarkcoinClient {
 
   /**
    * deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds.
-   * This will effect wallet balances.
+   * This will affect wallet balances.
    * @param txId The hex-encoded id of the transaction you are removing
    */
   public removePrunedFunds(txId: string): Promise<CallResult<null>> {
