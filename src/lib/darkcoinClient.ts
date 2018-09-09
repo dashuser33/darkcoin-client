@@ -148,7 +148,7 @@ export default class DarkcoinClient {
    * @returns Transaction id for the collateral transaction
    */
   public gobjectPrepare(parentHash: string, revision: number, creationTime: number, gobjectData: string): Promise<CallResult<string>> {
-    return this.callRPCMethod<string>('gobject', ['prepare', parentHash.toString, revision.toString, creationTime.toString, gobjectData]);
+    return this.callRPCMethod<string>('gobject', ['prepare', parentHash.toString(), revision.toString(), creationTime.toString(), gobjectData]);
   }
 
   /**
@@ -161,7 +161,7 @@ export default class DarkcoinClient {
    * @returns The resulting governance object hash
    */
   public gobjectSubmit(parentHash: string, revision: number, creationTime: number, gobjectData: string, txId: string): Promise<CallResult<string>> {
-    return this.callRPCMethod<string>('gobject', ['submit', parentHash.toString, revision.toString, creationTime.toString, gobjectData, txId]);
+    return this.callRPCMethod<string>('gobject', ['submit', parentHash.toString(), revision.toString(), creationTime.toString(), gobjectData, txId]);
   }
 
   /**
