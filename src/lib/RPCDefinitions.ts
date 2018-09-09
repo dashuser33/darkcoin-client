@@ -511,6 +511,10 @@ export interface Transaction {
    * If a comment is associated with the transaction.
    */
   readonly comment?: string;
+  /**
+   * Set to true if the payment involves a watch-only address. Otherwise not returned
+   */
+  readonly involvesWatchonly?: boolean;
 }
 
 
