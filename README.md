@@ -28,3 +28,20 @@ client.getWalletInfo().then((res) => {
 
 A more complete example in Typescript can be found at https://github.com/dashuser33/darkcoin-client-sample
 
+## FAQ
+
+### Why build this?
+
+We don't necessarily need to have a single API/library. Different devs prioritize different things. This library focuses on correctness enforcing thru type safety provided by Typescript, with explicit functions rather a thin proxy over the RPC api.
+
+### Why this name?
+
+There was already dashd-client and dash-client.
+
+### Why the method method I am looking for is not present?
+
+This is a working in progress, we will add them as we have time and/or need. But we are not adding deprecated methods, such as accounts api. Any method can still be accessed using the generic `callRPCMethod` function.
+
+### Can I use this in a production environment?
+
+It is still an experimental/working in progress thing, but the alternative libraries seems to also be, so, I guess this can be used, too. We have been testing methods as we add them but we advise to test this library well before using in a production environment.
