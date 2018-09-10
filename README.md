@@ -36,9 +36,9 @@ We don't necessarily need to have a single API/library. Different devs prioritiz
 
 ### Why this name?
 
-There was already dashd-client and dash-client.
+There was already dashd-client and dash-client. We might change it if enough people think it should.
 
-### Why the method method I am looking for is not present?
+### Why the method I am looking for is not present?
 
 This is a working in progress, we will add them as we have time and/or need. But we are not adding deprecated methods, such as accounts api. Any method can still be accessed using the generic `callRPCMethod` function.
 
