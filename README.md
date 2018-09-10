@@ -45,3 +45,10 @@ This is a working in progress, we will add them as we have time and/or need. But
 ### Can I use this in a production environment?
 
 It is still an experimental/working in progress thing, but the alternative libraries seems to also be, so, I guess this can be used, too. We have been testing methods as we add them but we advise to test this library well before using in a production environment.
+
+## Credits
+
+- Dash/Bitcoin RPC api devs
+- Dash Developer Reference at https://dash-docs.github.io/en/developer-reference
+- Typescript starter at https://github.com/bitjson/typescript-starter
+
