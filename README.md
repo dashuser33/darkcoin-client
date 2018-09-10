@@ -3,7 +3,7 @@
 Dash RPC api client. See docs at https://dashuser33.github.io/darkcoin-client/
 
 
-Example usage:
+Example javascript usage:
 
 ```javascript
 "use strict";
@@ -25,3 +25,6 @@ client.getWalletInfo().then((res) => {
 })
 
 ```
+
+A more complete example in Typescript can be found at https://github.com/dashuser33/darkcoin-client-sample
+
