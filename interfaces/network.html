@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DashdConfig | darkcoin-client</title>
+	<title>Network | darkcoin-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,28 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="dashdconfig.html">DashdConfig</a>
+					<a href="network.html">Network</a>
 				</li>
 			</ul>
-			<h1>Interface DashdConfig</h1>
+			<h1>Interface Network</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Configurations for instantiating DarkcoinClient</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DashdConfig</span>
+						<span class="target">Network</span>
 					</li>
 				</ul>
 			</section>
@@ -88,9 +81,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dashdconfig.html#password" class="tsd-kind-icon">password</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dashdconfig.html#url" class="tsd-kind-icon">url</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dashdconfig.html#user" class="tsd-kind-icon">user</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="network.html#limited" class="tsd-kind-icon">limited</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="network.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="network.html#proxy" class="tsd-kind-icon">proxy</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="network.html#proxy_randomize_credentials" class="tsd-kind-icon">proxy_<wbr>randomize_<wbr>credentials</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="network.html#reachable" class="tsd-kind-icon">reachable</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,34 +94,80 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="password" class="tsd-anchor"></a>
-					<h3>password</h3>
-					<div class="tsd-signature tsd-kind-icon">password<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="limited" class="tsd-anchor"></a>
+					<h3>limited</h3>
+					<div class="tsd-signature tsd-kind-icon">limited<span class="tsd-signature-symbol">:</span> <a href="../globals.html#booleanstring" class="tsd-signature-type">booleanString</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L19">lib/darkcoinClient.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L207">lib/RPCDefinitions.ts:207</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set to true if only connections to this network are allowed according to the -onlynet Dash Core command-line/configuration-file parameter. Otherwise set to false</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="url" class="tsd-anchor"></a>
-					<h3>url</h3>
-					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L17">lib/darkcoinClient.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L203">lib/RPCDefinitions.ts:203</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The name of the network. Either ipv4, ipv6, or onion</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="user" class="tsd-anchor"></a>
-					<h3>user</h3>
-					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="proxy" class="tsd-anchor"></a>
+					<h3>proxy</h3>
+					<div class="tsd-signature tsd-kind-icon">proxy<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L18">lib/darkcoinClient.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L215">lib/RPCDefinitions.ts:215</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The hostname and port of any proxy being used for this network. If a proxy is not in use, an empty string</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="proxy_randomize_credentials" class="tsd-anchor"></a>
+					<h3>proxy_<wbr>randomize_<wbr>credentials</h3>
+					<div class="tsd-signature tsd-kind-icon">proxy_<wbr>randomize_<wbr>credentials<span class="tsd-signature-symbol">:</span> <a href="../globals.html#booleanstring" class="tsd-signature-type">booleanString</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L220">lib/RPCDefinitions.ts:220</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Added in Bitcoin Core 0.11.0
+							Set to true if randomized credentials are set for this proxy. Otherwise set to false</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="reachable" class="tsd-anchor"></a>
+					<h3>reachable</h3>
+					<div class="tsd-signature tsd-kind-icon">reachable<span class="tsd-signature-symbol">:</span> <a href="../globals.html#booleanstring" class="tsd-signature-type">booleanString</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L211">lib/RPCDefinitions.ts:211</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Set to true if connections can be made to or from this network. Otherwise set to false</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,24 +187,9 @@
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="callresult.html" class="tsd-kind-icon">Call<wbr>Result</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="dashdconfig.html" class="tsd-kind-icon">Dashd<wbr>Config</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dashdconfig.html#password" class="tsd-kind-icon">password</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dashdconfig.html#url" class="tsd-kind-icon">url</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dashdconfig.html#user" class="tsd-kind-icon">user</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="gobject.html" class="tsd-kind-icon">GObject</a>
 					</li>
@@ -191,9 +217,30 @@
 					<li class=" tsd-kind-interface">
 						<a href="mininginfo.html" class="tsd-kind-icon">Mining<wbr>Info</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="network.html" class="tsd-kind-icon">Network</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="network.html#limited" class="tsd-kind-icon">limited</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="network.html#name" class="tsd-kind-icon">name</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="network.html#proxy" class="tsd-kind-icon">proxy</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="network.html#proxy_randomize_credentials" class="tsd-kind-icon">proxy_<wbr>randomize_<wbr>credentials</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="network.html#reachable" class="tsd-kind-icon">reachable</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="networkinfo.html" class="tsd-kind-icon">Network<wbr>Info</a>
 					</li>

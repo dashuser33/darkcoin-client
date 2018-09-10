@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DashdConfig | darkcoin-client</title>
+	<title>GovernanceInfo | darkcoin-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,28 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="dashdconfig.html">DashdConfig</a>
+					<a href="governanceinfo.html">GovernanceInfo</a>
 				</li>
 			</ul>
-			<h1>Interface DashdConfig</h1>
+			<h1>Interface GovernanceInfo</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Configurations for instantiating DarkcoinClient</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DashdConfig</span>
+						<span class="target">GovernanceInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -88,9 +81,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dashdconfig.html#password" class="tsd-kind-icon">password</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dashdconfig.html#url" class="tsd-kind-icon">url</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dashdconfig.html#user" class="tsd-kind-icon">user</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="governanceinfo.html#governanceminquorum" class="tsd-kind-icon">governanceminquorum</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="governanceinfo.html#lastsuperblock" class="tsd-kind-icon">lastsuperblock</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="governanceinfo.html#masternodewatchdogmaxseconds" class="tsd-kind-icon">masternodewatchdogmaxseconds</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="governanceinfo.html#maxgovobjdatasize" class="tsd-kind-icon">maxgovobjdatasize</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="governanceinfo.html#nextsuperblock" class="tsd-kind-icon">nextsuperblock</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="governanceinfo.html#proposalfee" class="tsd-kind-icon">proposalfee</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="governanceinfo.html#sentinelpingmaxseconds" class="tsd-kind-icon">sentinelpingmaxseconds</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="governanceinfo.html#superblockcycle" class="tsd-kind-icon">superblockcycle</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,34 +97,126 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="password" class="tsd-anchor"></a>
-					<h3>password</h3>
-					<div class="tsd-signature tsd-kind-icon">password<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="governanceminquorum" class="tsd-anchor"></a>
+					<h3>governanceminquorum</h3>
+					<div class="tsd-signature tsd-kind-icon">governanceminquorum<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L19">lib/darkcoinClient.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L300">lib/RPCDefinitions.ts:300</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the absolute minimum number of votes needed to trigger a governance action</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="url" class="tsd-anchor"></a>
-					<h3>url</h3>
-					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="lastsuperblock" class="tsd-anchor"></a>
+					<h3>lastsuperblock</h3>
+					<div class="tsd-signature tsd-kind-icon">lastsuperblock<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L17">lib/darkcoinClient.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L322">lib/RPCDefinitions.ts:322</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the last superblock mined</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="user" class="tsd-anchor"></a>
-					<h3>user</h3>
-					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="masternodewatchdogmaxseconds" class="tsd-anchor"></a>
+					<h3>masternodewatchdogmaxseconds</h3>
+					<div class="tsd-signature tsd-kind-icon">masternodewatchdogmaxseconds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L18">lib/darkcoinClient.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L305">lib/RPCDefinitions.ts:305</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Deprecated in Dash Core 0.12.3.0
+							sentinel watchdog expiration time in seconds</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="maxgovobjdatasize" class="tsd-anchor"></a>
+					<h3>maxgovobjdatasize</h3>
+					<div class="tsd-signature tsd-kind-icon">maxgovobjdatasize<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L330">lib/RPCDefinitions.ts:330</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the maximum size in bytes (I think) of a governance object</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="nextsuperblock" class="tsd-anchor"></a>
+					<h3>nextsuperblock</h3>
+					<div class="tsd-signature tsd-kind-icon">nextsuperblock<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L326">lib/RPCDefinitions.ts:326</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the next superblock to be mined</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="proposalfee" class="tsd-anchor"></a>
+					<h3>proposalfee</h3>
+					<div class="tsd-signature tsd-kind-icon">proposalfee<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L314">lib/RPCDefinitions.ts:314</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the proposal fee amount</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="sentinelpingmaxseconds" class="tsd-anchor"></a>
+					<h3>sentinelpingmaxseconds</h3>
+					<div class="tsd-signature tsd-kind-icon">sentinelpingmaxseconds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L310">lib/RPCDefinitions.ts:310</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Added in Dash Core 0.12.3.0
+							sentinel ping expiration time in seconds</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="superblockcycle" class="tsd-anchor"></a>
+					<h3>superblockcycle</h3>
+					<div class="tsd-signature tsd-kind-icon">superblockcycle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L318">lib/RPCDefinitions.ts:318</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>the number of blocks between superblocks</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,24 +236,9 @@
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="callresult.html" class="tsd-kind-icon">Call<wbr>Result</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="dashdconfig.html" class="tsd-kind-icon">Dashd<wbr>Config</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dashdconfig.html#password" class="tsd-kind-icon">password</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dashdconfig.html#url" class="tsd-kind-icon">url</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dashdconfig.html#user" class="tsd-kind-icon">user</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="gobject.html" class="tsd-kind-icon">GObject</a>
 					</li>
@@ -176,9 +251,39 @@
 					<li class=" tsd-kind-interface">
 						<a href="gobjectvote.html" class="tsd-kind-icon">GObject<wbr>Vote</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="governanceinfo.html" class="tsd-kind-icon">Governance<wbr>Info</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="governanceinfo.html#governanceminquorum" class="tsd-kind-icon">governanceminquorum</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="governanceinfo.html#lastsuperblock" class="tsd-kind-icon">lastsuperblock</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="governanceinfo.html#masternodewatchdogmaxseconds" class="tsd-kind-icon">masternodewatchdogmaxseconds</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="governanceinfo.html#maxgovobjdatasize" class="tsd-kind-icon">maxgovobjdatasize</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="governanceinfo.html#nextsuperblock" class="tsd-kind-icon">nextsuperblock</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="governanceinfo.html#proposalfee" class="tsd-kind-icon">proposalfee</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="governanceinfo.html#sentinelpingmaxseconds" class="tsd-kind-icon">sentinelpingmaxseconds</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="governanceinfo.html#superblockcycle" class="tsd-kind-icon">superblockcycle</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="localaddresses.html" class="tsd-kind-icon">Local<wbr>Addresses</a>
 					</li>

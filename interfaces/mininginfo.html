@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>WalletInfo | darkcoin-client</title>
+	<title>MiningInfo | darkcoin-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="walletinfo.html">WalletInfo</a>
+					<a href="mininginfo.html">MiningInfo</a>
 				</li>
 			</ul>
-			<h1>Interface WalletInfo</h1>
+			<h1>Interface MiningInfo</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">WalletInfo</span>
+						<span class="target">MiningInfo</span>
 					</li>
 				</ul>
 			</section>
@@ -81,17 +81,16 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#balance" class="tsd-kind-icon">balance</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#immature_balance" class="tsd-kind-icon">immature_<wbr>balance</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#keypoololdest" class="tsd-kind-icon">keypoololdest</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#keypoolsize" class="tsd-kind-icon">keypoolsize</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#keypoolsize_hd_internal" class="tsd-kind-icon">keypoolsize_<wbr>hd_<wbr>internal</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#keys_left" class="tsd-kind-icon">keys_<wbr>left</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#paytxfee" class="tsd-kind-icon">paytxfee</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#privatesend_balance" class="tsd-kind-icon">privatesend_<wbr>balance</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#txcount" class="tsd-kind-icon">txcount</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#unconfirmed_balance" class="tsd-kind-icon">unconfirmed_<wbr>balance</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="walletinfo.html#walletversion" class="tsd-kind-icon">walletversion</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#blocks" class="tsd-kind-icon">blocks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#chain" class="tsd-kind-icon">chain</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#currentblocksize" class="tsd-kind-icon">currentblocksize</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#currentblocktx" class="tsd-kind-icon">currentblocktx</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#difficulty" class="tsd-kind-icon">difficulty</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#errors" class="tsd-kind-icon">errors</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#generate" class="tsd-kind-icon">generate</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#genproclimit" class="tsd-kind-icon">genproclimit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#networkhashps" class="tsd-kind-icon">networkhashps</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="mininginfo.html#testnet" class="tsd-kind-icon">testnet</a></li>
 							</ul>
 						</section>
 					</div>
@@ -100,167 +99,155 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="balance" class="tsd-anchor"></a>
-					<h3>balance</h3>
-					<div class="tsd-signature tsd-kind-icon">balance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="blocks" class="tsd-anchor"></a>
+					<h3>blocks</h3>
+					<div class="tsd-signature tsd-kind-icon">blocks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L11">lib/RPCDefinitions.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L337">lib/RPCDefinitions.ts:337</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>the total confirmed balance of the wallet in DASH</p>
+							<p>The height of the highest block on the local best block chain</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="immature_balance" class="tsd-anchor"></a>
-					<h3>immature_<wbr>balance</h3>
-					<div class="tsd-signature tsd-kind-icon">immature_<wbr>balance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="chain" class="tsd-anchor"></a>
+					<h3>chain</h3>
+					<div class="tsd-signature tsd-kind-icon">chain<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L23">lib/RPCDefinitions.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L371">lib/RPCDefinitions.ts:371</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>the total immature balance of the wallet in DASH</p>
+							<p>Set to main for mainnet, test for testnet, and regtest for regtest</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="keypoololdest" class="tsd-anchor"></a>
-					<h3>keypoololdest</h3>
-					<div class="tsd-signature tsd-kind-icon">keypoololdest<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="currentblocksize" class="tsd-anchor"></a>
+					<h3>currentblocksize</h3>
+					<div class="tsd-signature tsd-kind-icon">currentblocksize<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L31">lib/RPCDefinitions.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L341">lib/RPCDefinitions.ts:341</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>the timestamp (seconds since Unix epoch) of the oldest pre-generated key in the key pool</p>
+							<p>If generation was enabled since the last time this node was restarted, this is the size in bytes of the last block built by this node for header hash checking. Otherwise, the value 0</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="keypoolsize" class="tsd-anchor"></a>
-					<h3>keypoolsize</h3>
-					<div class="tsd-signature tsd-kind-icon">keypoolsize<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="currentblocktx" class="tsd-anchor"></a>
+					<h3>currentblocktx</h3>
+					<div class="tsd-signature tsd-kind-icon">currentblocktx<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L35">lib/RPCDefinitions.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L345">lib/RPCDefinitions.ts:345</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>how many new keys are pre-generated (only counts external keys)</p>
+							<p>If generation was enabled since the last time this node was restarted, this is the number of transactions in the last block built by this node for header hash checking. Otherwise, this is the value 0</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="keypoolsize_hd_internal" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> keypoolsize_<wbr>hd_<wbr>internal</h3>
-					<div class="tsd-signature tsd-kind-icon">keypoolsize_<wbr>hd_<wbr>internal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="difficulty" class="tsd-anchor"></a>
+					<h3>difficulty</h3>
+					<div class="tsd-signature tsd-kind-icon">difficulty<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L39">lib/RPCDefinitions.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L349">lib/RPCDefinitions.ts:349</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>how many new keys are pre-generated for internal use (used for change outputs, only appears if the wallet is using this feature, otherwise external keys are used)</p>
+							<p>If generation was enabled since the last time this node was restarted, this is the difficulty of the highest-height block in the local best block chain. Otherwise, this is the value 0</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="keys_left" class="tsd-anchor"></a>
-					<h3>keys_<wbr>left</h3>
-					<div class="tsd-signature tsd-kind-icon">keys_<wbr>left<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="errors" class="tsd-anchor"></a>
+					<h3>errors</h3>
+					<div class="tsd-signature tsd-kind-icon">errors<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L43">lib/RPCDefinitions.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L353">lib/RPCDefinitions.ts:353</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>how many new keys are left since last automatic backup</p>
+							<p>A plain-text description of any errors this node has encountered or detected. If there are no errors, an empty string will be returned. This is not related to the JSON-RPC error field.</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="paytxfee" class="tsd-anchor"></a>
-					<h3>paytxfee</h3>
-					<div class="tsd-signature tsd-kind-icon">paytxfee<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="generate" class="tsd-anchor"></a>
+					<h3>generate</h3>
+					<div class="tsd-signature tsd-kind-icon">generate<span class="tsd-signature-symbol">:</span> <a href="../globals.html#booleanstring" class="tsd-signature-type">booleanString</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L47">lib/RPCDefinitions.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L376">lib/RPCDefinitions.ts:376</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>the transaction fee configuration, set in DASH/kB</p>
+							<p>Set to true if generation is currently enabled; set to false if generation is currently disabled. Only returned if the node has wallet support enabled
+							Removed in Bitcoin Core 0.13.0</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="privatesend_balance" class="tsd-anchor"></a>
-					<h3>privatesend_<wbr>balance</h3>
-					<div class="tsd-signature tsd-kind-icon">privatesend_<wbr>balance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="genproclimit" class="tsd-anchor"></a>
+					<h3>genproclimit</h3>
+					<div class="tsd-signature tsd-kind-icon">genproclimit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L15">lib/RPCDefinitions.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L358">lib/RPCDefinitions.ts:358</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>the anonymized dash balance of the wallet in DASH</p>
+							<p>The processor limit for generation (-1 if no generation - see getgenerate or setgenerate calls).
+							Removed in Bitcoin Core 0.13.0</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="txcount" class="tsd-anchor"></a>
-					<h3>txcount</h3>
-					<div class="tsd-signature tsd-kind-icon">txcount<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="networkhashps" class="tsd-anchor"></a>
+					<h3>networkhashps</h3>
+					<div class="tsd-signature tsd-kind-icon">networkhashps<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L27">lib/RPCDefinitions.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L362">lib/RPCDefinitions.ts:362</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>the total number of transactions in the wallet</p>
+							<p>An estimate of the number of hashes per second the network is generating to maintain the current difficulty. See the getnetworkhashps RPC for configurable access to this data</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="unconfirmed_balance" class="tsd-anchor"></a>
-					<h3>unconfirmed_<wbr>balance</h3>
-					<div class="tsd-signature tsd-kind-icon">unconfirmed_<wbr>balance<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="testnet" class="tsd-anchor"></a>
+					<h3>testnet</h3>
+					<div class="tsd-signature tsd-kind-icon">testnet<span class="tsd-signature-symbol">:</span> <a href="../globals.html#booleanstring" class="tsd-signature-type">booleanString</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L19">lib/RPCDefinitions.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L367">lib/RPCDefinitions.ts:367</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>the total unconfirmed balance of the wallet in DASH</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="walletversion" class="tsd-anchor"></a>
-					<h3>walletversion</h3>
-					<div class="tsd-signature tsd-kind-icon">walletversion<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L7">lib/RPCDefinitions.ts:7</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the wallet version</p>
+							<p>Set to true if this node is running on testnet. Set to false if this node is on mainnet or a regtest
+							Removed in Bitcoin Core 0.14.0</p>
 						</div>
 					</div>
 				</section>
@@ -309,9 +296,45 @@
 					<li class=" tsd-kind-interface">
 						<a href="masternodelist.html" class="tsd-kind-icon">Master<wbr>Node<wbr>List</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="mininginfo.html" class="tsd-kind-icon">Mining<wbr>Info</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#blocks" class="tsd-kind-icon">blocks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#chain" class="tsd-kind-icon">chain</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#currentblocksize" class="tsd-kind-icon">currentblocksize</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#currentblocktx" class="tsd-kind-icon">currentblocktx</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#difficulty" class="tsd-kind-icon">difficulty</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#errors" class="tsd-kind-icon">errors</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#generate" class="tsd-kind-icon">generate</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#genproclimit" class="tsd-kind-icon">genproclimit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#networkhashps" class="tsd-kind-icon">networkhashps</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="mininginfo.html#testnet" class="tsd-kind-icon">testnet</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="network.html" class="tsd-kind-icon">Network</a>
 					</li>
@@ -324,48 +347,9 @@
 					<li class=" tsd-kind-interface">
 						<a href="transactionoutput.html" class="tsd-kind-icon">Transaction<wbr>Output</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="walletinfo.html" class="tsd-kind-icon">Wallet<wbr>Info</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#balance" class="tsd-kind-icon">balance</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#immature_balance" class="tsd-kind-icon">immature_<wbr>balance</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#keypoololdest" class="tsd-kind-icon">keypoololdest</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#keypoolsize" class="tsd-kind-icon">keypoolsize</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#keypoolsize_hd_internal" class="tsd-kind-icon">keypoolsize_<wbr>hd_<wbr>internal</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#keys_left" class="tsd-kind-icon">keys_<wbr>left</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#paytxfee" class="tsd-kind-icon">paytxfee</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#privatesend_balance" class="tsd-kind-icon">privatesend_<wbr>balance</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#txcount" class="tsd-kind-icon">txcount</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#unconfirmed_balance" class="tsd-kind-icon">unconfirmed_<wbr>balance</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="walletinfo.html#walletversion" class="tsd-kind-icon">walletversion</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-type-alias tsd-is-not-exported">
 						<a href="../globals.html#booleanstring" class="tsd-kind-icon">boolean<wbr>String</a>
 					</li>

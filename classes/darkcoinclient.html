@@ -100,9 +100,26 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#abandontransaction" class="tsd-kind-icon">abandon<wbr>Transaction</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="darkcoinclient.html#callrpcmethod" class="tsd-kind-icon">callRPCMethod</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-private"><a href="darkcoinclient.html#filterundefined" class="tsd-kind-icon">filter<wbr>Undefined</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#getgovernanceinfo" class="tsd-kind-icon">get<wbr>Governance<wbr>Info</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#getmininginfo" class="tsd-kind-icon">get<wbr>Mining<wbr>Info</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#getnetworkinfo" class="tsd-kind-icon">get<wbr>Network<wbr>Info</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#getnewaddress" class="tsd-kind-icon">get<wbr>New<wbr>Address</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#getwalletinfo" class="tsd-kind-icon">get<wbr>Wallet<wbr>Info</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#gobjectcurrentvotes" class="tsd-kind-icon">gobject<wbr>Current<wbr>Votes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#gobjectlist" class="tsd-kind-icon">gobject<wbr>List</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#gobjectprepare" class="tsd-kind-icon">gobject<wbr>Prepare</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#gobjectsubmit" class="tsd-kind-icon">gobject<wbr>Submit</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#listsinceblock" class="tsd-kind-icon">list<wbr>Since<wbr>Block</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#listtransactions" class="tsd-kind-icon">list<wbr>Transactions</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#lockunspent" class="tsd-kind-icon">lock<wbr>Unspent</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#masternodelist" class="tsd-kind-icon">masternode<wbr>List</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#removeprunedfunds" class="tsd-kind-icon">remove<wbr>Pruned<wbr>Funds</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#sendtoaddress" class="tsd-kind-icon">send<wbr>ToAddress</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#settxfee" class="tsd-kind-icon">set<wbr>TxFee</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="darkcoinclient.html#signmessage" class="tsd-kind-icon">sign<wbr>Message</a></li>
 							</ul>
 						</section>
 					</div>
@@ -120,7 +137,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L26">lib/darkcoinClient.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L26">lib/darkcoinClient.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -142,13 +159,45 @@
 					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <a href="../interfaces/dashdconfig.html" class="tsd-signature-type">DashdConfig</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L26">lib/darkcoinClient.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L26">lib/darkcoinClient.ts:26</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="abandontransaction" class="tsd-anchor"></a>
+					<h3>abandon<wbr>Transaction</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">abandon<wbr>Transaction<span class="tsd-signature-symbol">(</span>txId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L66">lib/darkcoinClient.ts:66</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Mark in-wallet transaction <txid> as abandoned
+											This will mark this transaction and all its in-wallet descendants as abandoned which will allow
+											for their inputs to be respent.  It can be used to replace &quot;stuck&quot; or evicted transactions.
+											It only works on transactions which are not included in a block and are not currently in the mempool.
+									It has no effect on transactions which are already conflicted or abandoned.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>txId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
 					<a name="callrpcmethod" class="tsd-anchor"></a>
 					<h3>callRPCMethod</h3>
@@ -159,7 +208,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L38">lib/darkcoinClient.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L38">lib/darkcoinClient.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -199,6 +248,114 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-private">
+					<a name="filterundefined" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> filter<wbr>Undefined</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>Undefined&lt;T&gt;<span class="tsd-signature-symbol">(</span>originalArgs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IArguments</span>, params<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L324">lib/darkcoinClient.ts:324</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Build the parameter list by removing optional arguments</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>originalArgs: <span class="tsd-signature-type">IArguments</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>original argument list</p>
+									</div>
+								</li>
+								<li>
+									<h5>params: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getgovernanceinfo" class="tsd-anchor"></a>
+					<h3>get<wbr>Governance<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Governance<wbr>Info<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/governanceinfo.html" class="tsd-signature-type">GovernanceInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L306">lib/darkcoinClient.ts:306</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns network related governance info, i.e. superblock height, proposal fee, and minquorum.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/governanceinfo.html" class="tsd-signature-type">GovernanceInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getmininginfo" class="tsd-anchor"></a>
+					<h3>get<wbr>Mining<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Mining<wbr>Info<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/mininginfo.html" class="tsd-signature-type">MiningInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L313">lib/darkcoinClient.ts:313</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns mining related info, i.e. difficulty, blocksize, currentblocktx, and a network hash rate estimate.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/mininginfo.html" class="tsd-signature-type">MiningInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getnetworkinfo" class="tsd-anchor"></a>
+					<h3>get<wbr>Network<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Network<wbr>Info<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/networkinfo.html" class="tsd-signature-type">NetworkInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L299">lib/darkcoinClient.ts:299</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The getnetworkinfo RPC returns information about the node’s connection to the network.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/networkinfo.html" class="tsd-signature-type">NetworkInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getnewaddress" class="tsd-anchor"></a>
 					<h3>get<wbr>New<wbr>Address</h3>
@@ -209,7 +366,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L68">lib/darkcoinClient.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L80">lib/darkcoinClient.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -231,7 +388,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/4ec3431/src/lib/darkcoinClient.ts#L61">lib/darkcoinClient.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L73">lib/darkcoinClient.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -240,6 +397,464 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/walletinfo.html" class="tsd-signature-type">WalletInfo</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gobjectcurrentvotes" class="tsd-anchor"></a>
+					<h3>gobject<wbr>Current<wbr>Votes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">gobject<wbr>Current<wbr>Votes<span class="tsd-signature-symbol">(</span>hash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/gobjectcurrentvoteslist.html" class="tsd-signature-type">GObjectCurrentVotesList</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L285">lib/darkcoinClient.ts:285</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>hash: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/gobjectcurrentvoteslist.html" class="tsd-signature-type">GObjectCurrentVotesList</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gobjectlist" class="tsd-anchor"></a>
+					<h3>gobject<wbr>List</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">gobject<wbr>List<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/gobjectlist.html" class="tsd-signature-type">GObjectList</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L281">lib/darkcoinClient.ts:281</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns key/value pairs for all current GObjects with the key. Will include both funding gobjects and trigger gobjects,
+									Make sure to parse them and pull out the ones you want.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/gobjectlist.html" class="tsd-signature-type">GObjectList</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gobjectprepare" class="tsd-anchor"></a>
+					<h3>gobject<wbr>Prepare</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">gobject<wbr>Prepare<span class="tsd-signature-symbol">(</span>parentHash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, revision<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, creationTime<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, gobjectData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L236">lib/darkcoinClient.ts:236</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The gobject prepare RPC prepares a governance object by signing and creating a collateral transaction.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>parentHash: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Hash of the parent object. usually the root node which has a hash of 0</p>
+									</div>
+								</li>
+								<li>
+									<h5>revision: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object revision number (Always 0)</p>
+									</div>
+								</li>
+								<li>
+									<h5>creationTime: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Creation time as a unix timestamp</p>
+									</div>
+								</li>
+								<li>
+									<h5>gobjectData: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object data (JSON object with governance details)</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Transaction id for the collateral transaction</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gobjectsubmit" class="tsd-anchor"></a>
+					<h3>gobject<wbr>Submit</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">gobject<wbr>Submit<span class="tsd-signature-symbol">(</span>parentHash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, revision<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, creationTime<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, gobjectData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, txId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L260">lib/darkcoinClient.ts:260</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The gobject submit RPC submits a governance object to network (objects must first be prepared via gobject prepare).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>parentHash: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Hash of the parent object. Usually the root node which has a hash of 0</p>
+									</div>
+								</li>
+								<li>
+									<h5>revision: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object revision number (Always 0)</p>
+									</div>
+								</li>
+								<li>
+									<h5>creationTime: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Creation time as a unix timestamp (I think it needs to match the timestamp used in gobjectPrepare)</p>
+									</div>
+								</li>
+								<li>
+									<h5>gobjectData: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Object data (JSON object with governance details)</p>
+									</div>
+								</li>
+								<li>
+									<h5>txId: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The resulting governance object hash</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listsinceblock" class="tsd-anchor"></a>
+					<h3>list<wbr>Since<wbr>Block</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">list<wbr>Since<wbr>Block<span class="tsd-signature-symbol">(</span>headerHash<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, targetConfirmations<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, includeWatchOnly<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/transaction.html" class="tsd-signature-type">Transaction</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L125">lib/darkcoinClient.ts:125</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get all transactions in blocks since block [blockhash], or all transactions if omitted</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> headerHash: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The hash of a block header encoded as hex in RPC byte order.
+											All transactions affecting the wallet which are not in that block or any earlier
+											block will be returned, including unconfirmed transactions. Default is the hash
+										of the genesis block, so all transactions affecting the wallet are returned by default</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> targetConfirmations: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Sets the lastblock field of the results to the header
+											hash of a block with this many confirmations.
+											This does not affect which transactions are returned.
+										Default is 1, so the hash of the most recent block on the local best block chain is returned</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> includeWatchOnly: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>If set to true, include watch-only addresses in details and
+											calculations as if they were regular addresses belonging to the wallet.
+											If set to false (the default), treat watch-only addresses as if they didn’t
+										belong to this wallet</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/transaction.html" class="tsd-signature-type">Transaction</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="listtransactions" class="tsd-anchor"></a>
+					<h3>list<wbr>Transactions</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">list<wbr>Transactions<span class="tsd-signature-symbol">(</span>count<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, skip<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, includeWatchOnly<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/transaction.html" class="tsd-signature-type">Transaction</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L150">lib/darkcoinClient.ts:150</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the most recent transactions that affect the wallet.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> count: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The number of transactions to return. default 10</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> skip: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The number of transactions to return. default 0</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> includeWatchOnly: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Include transactions to watch-only addresses
+										(see &#39;importaddress&#39;). default false</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/transaction.html" class="tsd-signature-type">Transaction</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="lockunspent" class="tsd-anchor"></a>
+					<h3>lock<wbr>Unspent</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">lock<wbr>Unspent<span class="tsd-signature-symbol">(</span>unlock<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, inputs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/transactionoutput.html" class="tsd-signature-type">TransactionOutput</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L95">lib/darkcoinClient.ts:95</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Updates list of temporarily unspendable outputs.
+										Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.
+										T  If no transaction outputs are specified when unlocking then all current locked transaction outputs are unlocked.
+										A locked transaction output will not be chosen by automatic coin selection, when spending dashs.
+										Locks are stored in memory only. Nodes start with zero locked outputs, and the locked output list
+										is always cleared (by virtue of process exit) when a node stops or fails.
+									Also see the listunspent call</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>unlock: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Whether to unlock (true) or lock (false) the specified transactions</p>
+									</div>
+								</li>
+								<li>
+									<h5>inputs: <span class="tsd-signature-type">ReadonlyArray</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/transactionoutput.html" class="tsd-signature-type">TransactionOutput</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>list of transaction outputs</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="masternodelist" class="tsd-anchor"></a>
+					<h3>masternode<wbr>List</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">masternode<wbr>List<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/masternodelist.html" class="tsd-signature-type">MasterNodeList</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L222">lib/darkcoinClient.ts:222</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns key/value dictionary pairs for all masternodes.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/masternodelist.html" class="tsd-signature-type">MasterNodeList</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removeprunedfunds" class="tsd-anchor"></a>
+					<h3>remove<wbr>Pruned<wbr>Funds</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Pruned<wbr>Funds<span class="tsd-signature-symbol">(</span>txId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L107">lib/darkcoinClient.ts:107</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds.
+									This will affect wallet balances.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>txId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The hex-encoded id of the transaction you are removing</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sendtoaddress" class="tsd-anchor"></a>
+					<h3>send<wbr>ToAddress</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">send<wbr>ToAddress<span class="tsd-signature-symbol">(</span>dest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, amount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, comment<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, commentTo<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, subtractFeeFromAmount<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, useIS<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span>, usePS<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L173">lib/darkcoinClient.ts:173</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Send an amount to a given address.
+									Returns transaction id.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dest: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>amount: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> comment: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> commentTo: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> subtractFeeFromAmount: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> useIS: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> usePS: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="settxfee" class="tsd-anchor"></a>
+					<h3>set<wbr>TxFee</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>TxFee<span class="tsd-signature-symbol">(</span>amount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L200">lib/darkcoinClient.ts:200</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the transaction fee per kB. Overwrites the paytxfee parameter.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>amount: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The transaction fee in DASH/kB</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="signmessage" class="tsd-anchor"></a>
+					<h3>sign<wbr>Message</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">sign<wbr>Message<span class="tsd-signature-symbol">(</span>address<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L210">lib/darkcoinClient.ts:210</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sign a message with the private key of an address</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>address: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The dash address to use for the private key.</p>
+									</div>
+								</li>
+								<li>
+									<h5>message: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The message to create a signature of.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/callresult.html" class="tsd-signature-type">CallResult</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The signature of the message encoded in base 64</p>
 						</li>
 					</ul>
 				</section>
@@ -266,14 +881,65 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="darkcoinclient.html#config" class="tsd-kind-icon">config</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#abandontransaction" class="tsd-kind-icon">abandon<wbr>Transaction</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
 								<a href="darkcoinclient.html#callrpcmethod" class="tsd-kind-icon">callRPCMethod</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-private">
+								<a href="darkcoinclient.html#filterundefined" class="tsd-kind-icon">filter<wbr>Undefined</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#getgovernanceinfo" class="tsd-kind-icon">get<wbr>Governance<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#getmininginfo" class="tsd-kind-icon">get<wbr>Mining<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#getnetworkinfo" class="tsd-kind-icon">get<wbr>Network<wbr>Info</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="darkcoinclient.html#getnewaddress" class="tsd-kind-icon">get<wbr>New<wbr>Address</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="darkcoinclient.html#getwalletinfo" class="tsd-kind-icon">get<wbr>Wallet<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#gobjectcurrentvotes" class="tsd-kind-icon">gobject<wbr>Current<wbr>Votes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#gobjectlist" class="tsd-kind-icon">gobject<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#gobjectprepare" class="tsd-kind-icon">gobject<wbr>Prepare</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#gobjectsubmit" class="tsd-kind-icon">gobject<wbr>Submit</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#listsinceblock" class="tsd-kind-icon">list<wbr>Since<wbr>Block</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#listtransactions" class="tsd-kind-icon">list<wbr>Transactions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#lockunspent" class="tsd-kind-icon">lock<wbr>Unspent</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#masternodelist" class="tsd-kind-icon">masternode<wbr>List</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#removeprunedfunds" class="tsd-kind-icon">remove<wbr>Pruned<wbr>Funds</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#sendtoaddress" class="tsd-kind-icon">send<wbr>ToAddress</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#settxfee" class="tsd-kind-icon">set<wbr>TxFee</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="darkcoinclient.html#signmessage" class="tsd-kind-icon">sign<wbr>Message</a>
 							</li>
 						</ul>
 					</li>
@@ -286,7 +952,49 @@
 						<a href="../interfaces/dashdconfig.html" class="tsd-kind-icon">Dashd<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="../interfaces/gobject.html" class="tsd-kind-icon">GObject</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/gobjectcurrentvoteslist.html" class="tsd-kind-icon">GObject<wbr>Current<wbr>Votes<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/gobjectlist.html" class="tsd-kind-icon">GObject<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/gobjectvote.html" class="tsd-kind-icon">GObject<wbr>Vote</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/governanceinfo.html" class="tsd-kind-icon">Governance<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/localaddresses.html" class="tsd-kind-icon">Local<wbr>Addresses</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/masternode.html" class="tsd-kind-icon">Master<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/masternodelist.html" class="tsd-kind-icon">Master<wbr>Node<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/mininginfo.html" class="tsd-kind-icon">Mining<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/network.html" class="tsd-kind-icon">Network</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/networkinfo.html" class="tsd-kind-icon">Network<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/transaction.html" class="tsd-kind-icon">Transaction</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/transactionoutput.html" class="tsd-kind-icon">Transaction<wbr>Output</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="../interfaces/walletinfo.html" class="tsd-kind-icon">Wallet<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-is-not-exported">
+						<a href="../globals.html#booleanstring" class="tsd-kind-icon">boolean<wbr>String</a>
 					</li>
 				</ul>
 			</nav>

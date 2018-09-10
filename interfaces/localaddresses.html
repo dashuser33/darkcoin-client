@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DashdConfig | darkcoin-client</title>
+	<title>LocalAddresses | darkcoin-client</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,28 +56,21 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="dashdconfig.html">DashdConfig</a>
+					<a href="localaddresses.html">LocalAddresses</a>
 				</li>
 			</ul>
-			<h1>Interface DashdConfig</h1>
+			<h1>Interface LocalAddresses</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Configurations for instantiating DarkcoinClient</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DashdConfig</span>
+						<span class="target">LocalAddresses</span>
 					</li>
 				</ul>
 			</section>
@@ -88,9 +81,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dashdconfig.html#password" class="tsd-kind-icon">password</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dashdconfig.html#url" class="tsd-kind-icon">url</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="dashdconfig.html#user" class="tsd-kind-icon">user</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="localaddresses.html#address" class="tsd-kind-icon">address</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="localaddresses.html#port" class="tsd-kind-icon">port</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="localaddresses.html#score" class="tsd-kind-icon">score</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,34 +92,49 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="password" class="tsd-anchor"></a>
-					<h3>password</h3>
-					<div class="tsd-signature tsd-kind-icon">password<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="address" class="tsd-anchor"></a>
+					<h3>address</h3>
+					<div class="tsd-signature tsd-kind-icon">address<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L19">lib/darkcoinClient.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L227">lib/RPCDefinitions.ts:227</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An IP address or .onion address this node believes it listens on. This may be manually configured, auto detected, or based on version messages this node received from its peers</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="url" class="tsd-anchor"></a>
-					<h3>url</h3>
-					<div class="tsd-signature tsd-kind-icon">url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="port" class="tsd-anchor"></a>
+					<h3>port</h3>
+					<div class="tsd-signature tsd-kind-icon">port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L17">lib/darkcoinClient.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L231">lib/RPCDefinitions.ts:231</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The port number this node believes it listens on for the associated address. This may be manually configured, auto detected, or based on version messages this node received from its peers</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="user" class="tsd-anchor"></a>
-					<h3>user</h3>
-					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="score" class="tsd-anchor"></a>
+					<h3>score</h3>
+					<div class="tsd-signature tsd-kind-icon">score<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/darkcoinClient.ts#L18">lib/darkcoinClient.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/dashuser33/darkcoin-client/blob/1dd09ee/src/lib/RPCDefinitions.ts#L235">lib/RPCDefinitions.ts:235</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The number of incoming connections during the uptime of this node that have used this address in their version message</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -146,24 +154,9 @@
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="callresult.html" class="tsd-kind-icon">Call<wbr>Result</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface">
+					<li class=" tsd-kind-interface">
 						<a href="dashdconfig.html" class="tsd-kind-icon">Dashd<wbr>Config</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dashdconfig.html#password" class="tsd-kind-icon">password</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dashdconfig.html#url" class="tsd-kind-icon">url</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="dashdconfig.html#user" class="tsd-kind-icon">user</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="gobject.html" class="tsd-kind-icon">GObject</a>
 					</li>
@@ -179,9 +172,24 @@
 					<li class=" tsd-kind-interface">
 						<a href="governanceinfo.html" class="tsd-kind-icon">Governance<wbr>Info</a>
 					</li>
-					<li class=" tsd-kind-interface">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface">
 						<a href="localaddresses.html" class="tsd-kind-icon">Local<wbr>Addresses</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="localaddresses.html#address" class="tsd-kind-icon">address</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="localaddresses.html#port" class="tsd-kind-icon">port</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="localaddresses.html#score" class="tsd-kind-icon">score</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface">
 						<a href="masternode.html" class="tsd-kind-icon">Master<wbr>Node</a>
 					</li>
