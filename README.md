@@ -8,7 +8,7 @@ Example javascript usage:
 ```javascript
 "use strict";
 
-var DarkcoinClient = require("darkcoin-client").default;
+var DarkcoinClient = require("darkcoin-client");
 
 var config = {
   url: 'http://localhost:19998',
@@ -32,11 +32,11 @@ A more complete example in Typescript can be found at https://github.com/dashuse
 
 ### Why build this?
 
-We don't necessarily need to have a single API/library. Different devs prioritize different things. This library focuses on correctness enforcing thru type safety provided by Typescript, with explicit functions rather a thin proxy over the RPC api.
+We don't necessarily need to have a single API/library. Different devs prioritize different things. This library focuses on correctness enforcing through type safety provided by Typescript, with explicit functions rather a thin proxy over the RPC API.
 
 ### Why this name?
 
-There was already dashd-client and dash-client. We might change it if enough people think it should.
+There was already `dashd-client` and `dash-client`. We might change it if enough people think it should.
 
 ### Why the method I am looking for is not present?
 
@@ -48,7 +48,7 @@ It is still an experimental/working in progress thing, but the alternative libra
 
 ## Credits
 
-- Dash/Bitcoin RPC api devs
+- Dash/Bitcoin RPC API devs
 - Dash Developer Reference at https://dash-docs.github.io/en/developer-reference
 - Typescript starter at https://github.com/bitjson/typescript-starter
 
