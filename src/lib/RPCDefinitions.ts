@@ -1,4 +1,4 @@
-type booleanString = "true" | "false";
+type booleanString = 'true' | 'false';
 
 export interface WalletInfo {
   /**
@@ -100,7 +100,7 @@ export interface MasterNodeList {
   /**
    * the key/value dictionary of masternodes
    */
-  readonly [key:string]: MasterNode
+  readonly [key: string]: MasterNode;
 }
 
 // Gobjects
@@ -176,9 +176,8 @@ export interface GObjectList {
   /**
    * the key/value dictionary of gobjects
    */
-  readonly [key:string]: GObject
+  readonly [key: string]: GObject;
 }
-
 
 export interface GObjectVote {
   /**
@@ -192,7 +191,7 @@ export interface GObjectCurrentVotesList {
   /**
    * An array of votes
    */
-  readonly [key:string]: GObjectVote;
+  readonly [key: string]: GObjectVote;
 }
 
 // Network Information
@@ -329,7 +328,6 @@ export interface GovernanceInfo {
    * the maximum size in bytes (I think) of a governance object
    */
   readonly maxgovobjdatasize: number;
-
 }
 
 export interface MiningInfo {
@@ -387,6 +385,7 @@ export interface TransactionOutput {
   readonly vout: number;
 }
 
+/**
  * A payment or internal accounting entry
  */
 export interface Transaction {
@@ -480,7 +479,7 @@ export interface Transaction {
    * no not replaceable
    * unknown for unconfirmed transactions not in the mempool
    */
-  readonly "bip125-replaceable": "yes" | "no" | "unknown";
+  readonly 'bip125-replaceable': 'yes' | 'no' | 'unknown';
   /**
    * For transaction originating with this wallet, a locally-stored comment
    * added to the transaction identifying who the transaction was sent to.

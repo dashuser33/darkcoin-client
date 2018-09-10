@@ -54,7 +54,6 @@ export class DarkcoinClient {
     });
   }
 
-
   // Wallet Methods
 
   /**
@@ -83,7 +82,6 @@ export class DarkcoinClient {
   }
 
   /**
-
    * Updates list of temporarily unspendable outputs.
    * Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.
    * T  If no transaction outputs are specified when unlocking then all current locked transaction outputs are unlocked.
@@ -94,7 +92,10 @@ export class DarkcoinClient {
    * @param unlock Whether to unlock (true) or lock (false) the specified transactions
    * @param inputs list of transaction outputs
    */
-  public lockUnspent(unlock: boolean, inputs: ReadonlyArray<DashD.TransactionOutput>): Promise<CallResult<boolean>> {
+  public lockUnspent(
+    unlock: boolean,
+    inputs: ReadonlyArray<DashD.TransactionOutput>
+  ): Promise<CallResult<boolean>> {
     return this.callRPCMethod<boolean>('lockunspent', [unlock, inputs]);
   }
 
@@ -105,7 +106,7 @@ export class DarkcoinClient {
    */
   public removePrunedFunds(txId: string): Promise<CallResult<null>> {
     return this.callRPCMethod<null>('removeprunedfunds', [txId]);
-
+  }
   /**
    * Get all transactions in blocks since block [blockhash], or all transactions if omitted
    * @param headerHash The hash of a block header encoded as hex in RPC byte order.
@@ -121,14 +122,21 @@ export class DarkcoinClient {
    * If set to false (the default), treat watch-only addresses as if they didn’t
    * belong to this wallet
    */
-  public listSinceBlock(headerHash?: string, targetConfirmations?: number, includeWatchOnly?: boolean): Promise<CallResult<ReadonlyArray<DashD.Transaction>>> {
+  public listSinceBlock(
+    headerHash?: string,
+    targetConfirmations?: number,
+    includeWatchOnly?: boolean
+  ): Promise<CallResult<ReadonlyArray<DashD.Transaction>>> {
     const params: ReadonlyArray<any> = [
       headerHash,
       targetConfirmations,
       includeWatchOnly
     ];
     return this.filterUndefined(arguments, params).then(filteredParams =>
-      this.callRPCMethod<ReadonlyArray<DashD.Transaction>>('listsinceblock', filteredParams)
+      this.callRPCMethod<ReadonlyArray<DashD.Transaction>>(
+        'listsinceblock',
+        filteredParams
+      )
     );
   }
 
@@ -139,15 +147,22 @@ export class DarkcoinClient {
    * @param includeWatchOnly Include transactions to watch-only addresses
    * (see 'importaddress'). default false
    */
-  public listTransactions(count?: number, skip?: number, includeWatchOnly?: boolean): Promise<CallResult<ReadonlyArray<DashD.Transaction>>> {
+  public listTransactions(
+    count?: number,
+    skip?: number,
+    includeWatchOnly?: boolean
+  ): Promise<CallResult<ReadonlyArray<DashD.Transaction>>> {
     const params: ReadonlyArray<any> = [
       '*', // account
-     count,
-     skip,
-     includeWatchOnly
+      count,
+      skip,
+      includeWatchOnly
     ];
     return this.filterUndefined(arguments, params).then(filteredParams =>
-      this.callRPCMethod<ReadonlyArray<DashD.Transaction>>('listtransactions', filteredParams)
+      this.callRPCMethod<ReadonlyArray<DashD.Transaction>>(
+        'listtransactions',
+        filteredParams
+      )
     );
   }
 
@@ -192,10 +207,12 @@ export class DarkcoinClient {
    * @param message The message to create a signature of.
    * @returns The signature of the message encoded in base 64
    */
-  public signMessage(address: string, message: string): Promise<CallResult<string>> {
+  public signMessage(
+    address: string,
+    message: string
+  ): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('signmessage', [address, message]);
   }
-
 
   // Masternodes
 
@@ -216,8 +233,19 @@ export class DarkcoinClient {
    * @param gobjectData Object data (JSON object with governance details)
    * @returns Transaction id for the collateral transaction
    */
-  public gobjectPrepare(parentHash: string, revision: number, creationTime: number, gobjectData: string): Promise<CallResult<string>> {
-    return this.callRPCMethod<string>('gobject', ['prepare', parentHash.toString(), revision.toString(), creationTime.toString(), gobjectData]);
+  public gobjectPrepare(
+    parentHash: string,
+    revision: number,
+    creationTime: number,
+    gobjectData: string
+  ): Promise<CallResult<string>> {
+    return this.callRPCMethod<string>('gobject', [
+      'prepare',
+      parentHash.toString(),
+      revision.toString(),
+      creationTime.toString(),
+      gobjectData
+    ]);
   }
 
   /**
@@ -229,8 +257,21 @@ export class DarkcoinClient {
    * @param txID Collateral transaction ID
    * @returns The resulting governance object hash
    */
-  public gobjectSubmit(parentHash: string, revision: number, creationTime: number, gobjectData: string, txId: string): Promise<CallResult<string>> {
-    return this.callRPCMethod<string>('gobject', ['submit', parentHash.toString(), revision.toString(), creationTime.toString(), gobjectData, txId]);
+  public gobjectSubmit(
+    parentHash: string,
+    revision: number,
+    creationTime: number,
+    gobjectData: string,
+    txId: string
+  ): Promise<CallResult<string>> {
+    return this.callRPCMethod<string>('gobject', [
+      'submit',
+      parentHash.toString(),
+      revision.toString(),
+      creationTime.toString(),
+      gobjectData,
+      txId
+    ]);
   }
 
   /**
@@ -244,11 +285,13 @@ export class DarkcoinClient {
   public gobjectCurrentVotes(
     hash: string
   ): Promise<CallResult<DashD.GObjectCurrentVotesList>> {
-    return this.callRPCMethod<DashD.GObjectCurrentVotesList>('gobject', ['getcurrentvotes', hash]);
+    return this.callRPCMethod<DashD.GObjectCurrentVotesList>('gobject', [
+      'getcurrentvotes',
+      hash
+    ]);
   }
 
-
-  // Network Information 
+  // Network Information
 
   /**
    * The getnetworkinfo RPC returns information about the node’s connection to the network.
@@ -271,9 +314,8 @@ export class DarkcoinClient {
     return this.callRPCMethod<DashD.MiningInfo>('getmininginfo', []);
   }
 
-
   // Private Methods
-  
+
   /**
    * Build the parameter list by removing optional arguments
    * @param originalArgs original argument list

@@ -1,5 +1,5 @@
 import test from 'ava';
-import {DarkcoinClient} from './darkcoinClient';
+import { DarkcoinClient } from './darkcoinClient';
 
 test('Fail on undefined parameters', async t => {
   const config = new DarkcoinClient({
