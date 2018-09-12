@@ -8,7 +8,7 @@ Example javascript usage:
 ```javascript
 "use strict";
 
-var DarkcoinClient = require("darkcoin-client");
+var DarkcoinClient = require("darkcoin-client").DarkcoinClient;
 
 var config = {
   url: 'http://localhost:19998',
