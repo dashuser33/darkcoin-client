@@ -281,7 +281,7 @@ export class DarkcoinClient {
    * @param parentHash Hash of the parent object. Usually the root node which has a hash of 0
    * @param creationTime Creation time as a unix timestamp (I think it needs to match the timestamp used in gobjectPrepare)
    * @param gobjectData Object data (JSON object with governance details)
-   * @param txID Collateral transaction ID
+   * @param txId Collateral transaction ID
    * @returns The resulting governance object hash
    */
   public gobjectSubmit(
