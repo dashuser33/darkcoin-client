@@ -2,11 +2,22 @@ import * as Req from 'request-promise-lite';
 import * as DashD from './RPCDefinitions';
 
 /**
- * Each call returns this
+ * Each method response returns one object like this
+ * @typeparam A Type representing the actual result
  */
 export interface CallResult<A> {
+  /**
+   * The type of result varies according to the method
+   */
   readonly result?: A;
+  /**
+   * The error object if the call fails
+   */
   readonly error?: any;
+  /**
+   * id associated with a particular call. It is a random ID unless specified
+   * directly callRPCMethod
+   */
   readonly id: number;
 }
 
@@ -24,6 +35,18 @@ export interface DashdConfig {
  */
 export class DarkcoinClient {
   public readonly config: DashdConfig;
+
+  /**
+   * Object revision number. Always set to '1'
+   * See https://github.com/dashuser33/darkcoin-client/pull/6#pullrequestreview-153566527
+   */
+  public readonly defaultObjectRevision: string = '1';
+  /**
+   * Parent hash number. Always set to '0'
+   * See https://github.com/dashuser33/darkcoin-client/pull/6#pullrequestreview-153566527
+   */
+  public readonly defaultParentHash: string = '0';
+
   constructor(dashdConfig: DashdConfig) {
     this.config = dashdConfig;
   }
@@ -153,7 +176,7 @@ export class DarkcoinClient {
     includeWatchOnly?: boolean
   ): Promise<CallResult<ReadonlyArray<DashD.Transaction>>> {
     const params: ReadonlyArray<any> = [
-      '*', // account
+      '*', // account. Set to a default value
       count,
       skip,
       includeWatchOnly
@@ -168,7 +191,19 @@ export class DarkcoinClient {
 
   /**
    * Send an amount to a given address.
-   * Returns transaction id.
+   * @param dest A P2PKH or P2SH address to which the dash should be sent
+   * @param amount The amount to spent in dash
+   * @param comment A locally-stored (not broadcast) comment assigned to this
+   * transaction. Default is no comment
+   * @param commentTo A locally-stored (not broadcast) comment assigned to this
+   * transaction. Meant to be used for describing who the payment was sent to.
+   * Default is no comment
+   * @param subtractFeeFromAmount The fee will be deducted from the amount being
+   * sent. The recipient will receive less dash than you enter in the amount field.
+   * Default is false
+   * @param useIS If set to true, send this transaction as InstantSend (default: false).
+   * @param usePS If set to true, use anonymized funds only (default: false).
+   * @return transaction id.
    */
   public sendToAddress(
     dest: string,
@@ -227,22 +262,18 @@ export class DarkcoinClient {
 
   /**
    * The gobject prepare RPC prepares a governance object by signing and creating a collateral transaction.
-   * @param parentHash Hash of the parent object. usually the root node which has a hash of 0
-   * @param revision Object revision number (Always 0)
    * @param creationTime Creation time as a unix timestamp
    * @param gobjectData Object data (JSON object with governance details)
    * @returns Transaction id for the collateral transaction
    */
   public gobjectPrepare(
-    parentHash: string,
-    revision: number,
     creationTime: number,
     gobjectData: string
   ): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('gobject', [
       'prepare',
-      parentHash.toString(),
-      revision.toString(),
+      this.defaultParentHash,
+      this.defaultObjectRevision,
       creationTime.toString(),
       gobjectData
     ]);
@@ -250,24 +281,20 @@ export class DarkcoinClient {
 
   /**
    * The gobject submit RPC submits a governance object to network (objects must first be prepared via gobject prepare).
-   * @param parentHash Hash of the parent object. Usually the root node which has a hash of 0
-   * @param revision Object revision number (Always 0)
    * @param creationTime Creation time as a unix timestamp (I think it needs to match the timestamp used in gobjectPrepare)
    * @param gobjectData Object data (JSON object with governance details)
-   * @param txID Collateral transaction ID
+   * @param txId Collateral transaction ID
    * @returns The resulting governance object hash
    */
   public gobjectSubmit(
-    parentHash: string,
-    revision: number,
     creationTime: number,
     gobjectData: string,
     txId: string
   ): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('gobject', [
       'submit',
-      parentHash.toString(),
-      revision.toString(),
+      this.defaultParentHash,
+      this.defaultObjectRevision,
       creationTime.toString(),
       gobjectData,
       txId
