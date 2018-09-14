@@ -41,6 +41,11 @@ export class DarkcoinClient {
    * See https://github.com/dashuser33/darkcoin-client/pull/6#pullrequestreview-153566527
    */
   public readonly defaultObjectRevision: string = '1';
+  /**
+   * Parent hash number. Always set to '0'
+   * See https://github.com/dashuser33/darkcoin-client/pull/6#pullrequestreview-153566527
+   */
+  public readonly defaultParentHash: string = '0';
 
   constructor(dashdConfig: DashdConfig) {
     this.config = dashdConfig;
@@ -257,19 +262,17 @@ export class DarkcoinClient {
 
   /**
    * The gobject prepare RPC prepares a governance object by signing and creating a collateral transaction.
-   * @param parentHash Hash of the parent object. usually the root node which has a hash of 0
    * @param creationTime Creation time as a unix timestamp
    * @param gobjectData Object data (JSON object with governance details)
    * @returns Transaction id for the collateral transaction
    */
   public gobjectPrepare(
-    parentHash: string,
     creationTime: number,
     gobjectData: string
   ): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('gobject', [
       'prepare',
-      parentHash.toString(),
+      this.defaultParentHash,
       this.defaultObjectRevision,
       creationTime.toString(),
       gobjectData
@@ -278,21 +281,19 @@ export class DarkcoinClient {
 
   /**
    * The gobject submit RPC submits a governance object to network (objects must first be prepared via gobject prepare).
-   * @param parentHash Hash of the parent object. Usually the root node which has a hash of 0
    * @param creationTime Creation time as a unix timestamp (I think it needs to match the timestamp used in gobjectPrepare)
    * @param gobjectData Object data (JSON object with governance details)
    * @param txId Collateral transaction ID
    * @returns The resulting governance object hash
    */
   public gobjectSubmit(
-    parentHash: string,
     creationTime: number,
     gobjectData: string,
     txId: string
   ): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('gobject', [
       'submit',
-      parentHash.toString(),
+      this.defaultParentHash,
       this.defaultObjectRevision,
       creationTime.toString(),
       gobjectData,
