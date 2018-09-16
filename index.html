@@ -66,10 +66,10 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="darkcoin-client">darkcoin-client</h1>
 				<p>Dash RPC api client. See docs at <a href="https://dashuser33.github.io/darkcoin-client/">https://dashuser33.github.io/darkcoin-client/</a></p>
-				<p>Example usage:</p>
+				<p>Example javascript usage:</p>
 				<pre><code class="language-javascript"><span class="hljs-meta">"use strict"</span>;
 
-<span class="hljs-keyword">var</span> DarkcoinClient = <span class="hljs-built_in">require</span>(<span class="hljs-string">"darkcoin-client"</span>).default;
+<span class="hljs-keyword">var</span> DarkcoinClient = <span class="hljs-built_in">require</span>(<span class="hljs-string">"darkcoin-client"</span>).DarkcoinClient;
 
 <span class="hljs-keyword">var</span> config = {
   <span class="hljs-attr">url</span>: <span class="hljs-string">'http://localhost:19998'</span>,
@@ -85,6 +85,22 @@ client.getWalletInfo().then(<span class="hljs-function">(<span class="hljs-param
   <span class="hljs-built_in">console</span>.log(e)
 })
 </code></pre>
+				<p>A more complete example in Typescript can be found at <a href="https://github.com/dashuser33/darkcoin-client-sample">https://github.com/dashuser33/darkcoin-client-sample</a></p>
+				<h2 id="faq">FAQ</h2>
+				<h3 id="why-build-this-">Why build this?</h3>
+				<p>We don&#39;t necessarily need to have a single API/library. Different devs prioritize different things. This library focuses on correctness enforcing through type safety provided by Typescript, with explicit functions rather a thin proxy over the RPC API.</p>
+				<h3 id="why-this-name-">Why this name?</h3>
+				<p>There was already <code>dashd-client</code> and <code>dash-client</code>. We might change it if enough people think it should.</p>
+				<h3 id="why-the-method-i-am-looking-for-is-not-present-">Why the method I am looking for is not present?</h3>
+				<p>This is a working in progress, we will add them as we have time and/or need. But we are not adding deprecated methods, such as accounts api. Any method can still be accessed using the generic <code>callRPCMethod</code> function.</p>
+				<h3 id="can-i-use-this-in-a-production-environment-">Can I use this in a production environment?</h3>
+				<p>It is still an experimental/working in progress thing, but the alternative libraries seems to also be, so, I guess this can be used, too. We have been testing methods as we add them but we advise to test this library well before using in a production environment.</p>
+				<h2 id="credits">Credits</h2>
+				<ul>
+					<li>Dash/Bitcoin RPC API devs</li>
+					<li>Dash Developer Reference at <a href="https://dash-docs.github.io/en/developer-reference">https://dash-docs.github.io/en/developer-reference</a></li>
+					<li>Typescript starter at <a href="https://github.com/bitjson/typescript-starter">https://github.com/bitjson/typescript-starter</a></li>
+				</ul>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
