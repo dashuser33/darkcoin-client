@@ -45,7 +45,6 @@ test('get a receiving address', async t => {
 });
 
 test('balance for new address should be zero', async t => {
-  //const receivingAddress = 'yhKmAqSQzPcZU53VMPFZoRLFy8vuGJZd69';
   await client.getAddressBalance([receivingAddress]).then(r => {
     // t.truthy(receivingAddress);
     t.deepEqual(r.result, { balance: 0, received: 0 });
