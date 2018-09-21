@@ -47,6 +47,11 @@ export interface WalletInfo {
   readonly paytxfee: number;
 }
 
+export interface AddressBalance {
+  readonly balance: number;
+  readonly received: number;
+}
+
 // Masternodes
 
 export interface MasterNode {

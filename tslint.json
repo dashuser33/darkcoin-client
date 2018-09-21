@@ -8,10 +8,11 @@
     "typedef": [true, "call-signature"],
     "no-console": false,
     "object-literal-sort-keys": false,
+    "comment-format": false,
 
     "readonly-keyword": true,
     "readonly-array": true,
-    "no-let": true,
+    "no-let": false,
     "no-object-mutation": true,
     "no-delete": true,
     "no-method-signature": true,

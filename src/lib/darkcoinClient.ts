@@ -91,6 +91,18 @@ export class DarkcoinClient {
   }
 
   /**
+   * returns the balance for address(es).
+   * @param addresses
+   */
+  public getAddressBalance(
+    addresses: ReadonlyArray<string>
+  ): Promise<CallResult<DashD.AddressBalance>> {
+    const param = { addresses };
+    return this.callRPCMethod<DashD.AddressBalance>('getaddressbalance', [
+      param
+    ]);
+  }
+  /**
    * Returns an object containing various wallet state info.
    */
   public getWalletInfo(): Promise<CallResult<DashD.WalletInfo>> {
