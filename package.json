@@ -19,7 +19,7 @@
     "test": "run-s build test:*",
     "test:tslint": "tslint --project .",
     "test:format": "prettier \"src/**/*.ts\" --list-different || run-s --silent test:show-msg",
-    "test:show-msg": "echo '\\033[31m Code not formatted correctly. Run fix:prettier \\033[0m ' && false",
+    "test:show-msg": "echo '\\033[31m Code not formatted correctly. Run fix:prettier \\033[0m' && (exit 1)",
     "test:unit": "nyc --silent ava",
     "watch": "run-s clean build:main && run-p \"build:main -- -w\" \"test:unit -- --watch\"",
     "doc": "run-s doc:html && opn build/docs/index.html",
