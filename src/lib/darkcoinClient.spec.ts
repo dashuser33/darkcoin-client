@@ -60,4 +60,3 @@ test('balance for new address should be zero', async t => {
     t.deepEqual(r.result, { balance: 0, received: 0 });
   });
 });
-
