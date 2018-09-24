@@ -34,6 +34,14 @@ export interface DashdConfig {
  * Client instance for doing RPC calls on Dashd
  */
 export class DarkcoinClient {
+  /**
+   * Convert value from DASH to Duff (multiply by 10 ^ 8)
+   * @param value
+   */
+  public static convertDashToDuffs(value: number): number {
+    return value * 10 ** 8;
+  }
+
   public readonly config: DashdConfig;
 
   /**
@@ -91,7 +99,7 @@ export class DarkcoinClient {
   }
 
   /**
-   * returns the balance for address(es).
+   * returns the balance for address(es) in duffs.
    * @param addresses
    */
   public getAddressBalance(
@@ -114,6 +122,13 @@ export class DarkcoinClient {
    */
   public getNewAddress(): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('getnewaddress', []);
+  }
+
+  /**
+   * Returns the wallet’s total unconfirmed balance
+   */
+  public getUnconfirmedBalance(): Promise<CallResult<number>> {
+    return this.callRPCMethod<number>('getunconfirmedbalance', []);
   }
 
   /**
