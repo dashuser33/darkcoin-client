@@ -91,6 +91,71 @@ test('send to address', async t => {
     });
 });
 
+test('Sign and verify message', async t => {
+  const msgToSign = 'test msg to be signed';
+  await client.signMessage(receivingAddress, msgToSign).then(r => {
+    const signedMessage = r.result;
+    t.true(signedMessage.length > 0);
+    return client
+      .verifyMessage(receivingAddress, signedMessage, msgToSign)
+      .then(r2 => {
+        t.true(r2.result);
+      });
+  });
+});
+
+test('Return false on wrong signature', async t => {
+  const msgToSign = 'test msg to be signed';
+  await client.signMessage(receivingAddress, msgToSign).then(r => {
+    const signedMessage = r.result;
+    const wrongMsg = msgToSign.replace('d', 'c');
+    return client
+      .verifyMessage(receivingAddress, signedMessage, wrongMsg)
+      .then(r2 => {
+        t.false(r2.result);
+      });
+  });
+});
+
+test('revert tx fee to initial', async t => {
+  await client.setTxFee(initialWalletState.paytxfee).then(r => {
+    t.true(r.result);
+  });
+});
+
+test('Estimate fee', async t => {
+  await client.estimateFee(1).then(r => {
+    // test currently always returning -1.
+    t.true(r.result >= -1);
+  });
+});
+
+test('Estimate smart fee', async t => {
+  await client.estimateSmartFee(1).then(r => {
+    t.true(r.result.feerate > 0);
+    t.true(r.result.blocks > 0);
+  });
+});
+
+test('Dumped wallet should be imported without errors', async t => {
+  const randInt = Math.floor(Math.random() * 1000);
+  const outFile = '/tmp/tests-' + randInt;
+  await client
+    .dumpWallet(outFile)
+    .then(() => {
+      return client.importWallet(outFile).then(() => {
+        return t.pass();
+      });
+    })
+    .catch(e => {
+      return t.fail(String(e));
+    });
+});
+
+/*
+* Test things that have a delayed result, e.g. waiting on a block/transaction
+*/
+
 test('get new balance', async t =>
   retryUntilTrue(
     t,
@@ -104,9 +169,3 @@ test('get new balance', async t =>
     120,
     3000
   ));
-
-test('revert tx fee to initial', async t => {
-  await client.setTxFee(initialWalletState.paytxfee).then(r => {
-    t.is(r.result, true);
-  });
-});

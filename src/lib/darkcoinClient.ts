@@ -99,7 +99,41 @@ export class DarkcoinClient {
   }
 
   /**
-   * returns the balance for address(es) in duffs.
+   * creates or overwrites a file with all wallet keys in a human-readable format.
+   * @param filename The file in which the wallet dump will be placed. May be prefaced by an
+   * absolute file path. An existing file with that name will be overwritten
+   */
+  public dumpWallet(filename: string): Promise<CallResult<null>> {
+    return this.callRPCMethod<null>('dumpwallet', [filename]);
+  }
+
+  /**
+   * Estimates the transaction fee per kilobyte that needs to be paid for a transaction to
+   * begin confirmation within a certain number of blocks.
+   * @param blocks The maximum number of blocks a transaction should have to wait before it is
+   * predicted to be included in a block. Has to be between 1 and 25 blocks
+   */
+  public estimateFee(blocks: number): Promise<CallResult<number>> {
+    return this.callRPCMethod<number>('estimatefee', [blocks]);
+  }
+
+  /**
+   * Estimates the transaction fee per kilobyte that needs to be paid for a transaction to begin
+   * confirmation within a certain number of blocks and returns the number of blocks for which
+   * the estimate is valid.
+   * @param blocks The maximum number of blocks a transaction should have to wait before it is
+   * predicted to be included in a block. Has to be between 1 and 25 blocks
+   */
+  public estimateSmartFee(
+    blocks: number
+  ): Promise<CallResult<DashD.FeeEstimation>> {
+    return this.callRPCMethod<DashD.FeeEstimation>('estimatesmartfee', [
+      blocks
+    ]);
+  }
+
+  /**
+   * Returns the balance for address(es) in duffs.
    * @param addresses
    */
   public getAddressBalance(
@@ -132,6 +166,17 @@ export class DarkcoinClient {
   }
 
   /**
+   *  imports private keys from a file in wallet dump file format (see the dumpwallet RPC).
+   * These keys will be added to the keys currently in the wallet. This call may need to rescan
+   * all or parts of the block chain for transactions affecting the newly-added keys, which may
+   * take several minutes.
+   * @param filename The file to import. The path is relative to Dash Core’s working directory
+   */
+  public importWallet(filename: string): Promise<CallResult<null>> {
+    return this.callRPCMethod<null>('importwallet', [filename]);
+  }
+
+  /**
    * Updates list of temporarily unspendable outputs.
    * Temporarily lock (unlock=false) or unlock (unlock=true) specified transaction outputs.
    * T  If no transaction outputs are specified when unlocking then all current locked transaction outputs are unlocked.
@@ -150,7 +195,7 @@ export class DarkcoinClient {
   }
 
   /**
-   * deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds.
+   * Deletes the specified transaction from the wallet. Meant for use with pruned wallets and as a companion to importprunedfunds.
    * This will affect wallet balances.
    * @param txId The hex-encoded id of the transaction you are removing
    */
@@ -274,6 +319,24 @@ export class DarkcoinClient {
     message: string
   ): Promise<CallResult<string>> {
     return this.callRPCMethod<string>('signmessage', [address, message]);
+  }
+
+  /**
+   * verifies a signed message.
+   * @param address
+   * @param signature
+   * @param message
+   */
+  public verifyMessage(
+    address: string,
+    signature: string,
+    message: string
+  ): Promise<CallResult<string>> {
+    return this.callRPCMethod<string>('verifymessage', [
+      address,
+      signature,
+      message
+    ]);
   }
 
   // Masternodes

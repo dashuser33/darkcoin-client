@@ -528,3 +528,19 @@ export interface Transaction {
    */
   readonly involvesWatchonly?: boolean;
 }
+
+/**
+ * Result of some estimate fee methods
+ */
+export interface FeeEstimation {
+  /**
+   * The estimated fee the transaction should pay in order to be included within the specified
+   * number of blocks. If the node doesn’t have enough information to make an estimate,
+   * the value -1 will be returned
+   */
+  readonly feerate: number;
+  /**
+   * Block number (relative, starting from 1) where the estimate was found
+   */
+  readonly blocks: number;
+}
